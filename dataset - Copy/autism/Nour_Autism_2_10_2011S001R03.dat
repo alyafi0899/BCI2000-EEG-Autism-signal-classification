@@ -1,278 +1,0 @@
-HeaderLen= 15795 SourceCh= 16 StatevectorLen= 14
-[ State Vector Definition ] 
-Running 1 1 0 0
-Recording 1 1 0 1
-SourceTime 16 0 0 2
-StimulusCodeRes 16 0 2 2
-StimulusTypeRes 3 0 4 2
-StimulusTime 16 0 4 5
-StimulusCode 16 0 6 5
-StimulusType 1 0 8 5
-StimulusBegin 1 0 8 6
-PhaseInSequence 2 0 8 7
-SelectedTarget 16 0 9 1
-SelectedRow 8 0 11 1
-SelectedColumn 8 0 12 1
-[ Parameter Definition ] 
-Source:Signal%20Properties:DataIOFilter int SourceCh= 16 16 1 % // number of digitized and stored channels
-Source:Signal%20Properties:DataIOFilter int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
-Source:Signal%20Properties:DataIOFilter int SamplingRate= 256 256Hz 1 % // sample rate
-Source:Signal%20Properties:DataIOFilter list ChannelNames= 16 Fp1 F3 F7 T3 T5 O1 C4 FP2 Fz F4 F8 C3 Cz Pz Oz O2 // list of channel names
-Source:Signal%20Properties:DataIOFilter floatlist SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 % % // Offset for channels in A/D units
-Source:Signal%20Properties:DataIOFilter floatlist SourceChGain= 16 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.003 % % // gain for each channel (A/D units -> muV)
-Storage:Data%20Location:DataIOFilter string DataDirectory= ..\data ..\data % % // path to top level data directory (directory)
-Storage:Session:DataIOFilter string SubjectName= Nour_Autism_2_10_2011 Name % % // subject alias
-Storage:Session:DataIOFilter string SubjectSession= 001 001 % % // three-digit session number
-Storage:Session:DataIOFilter string SubjectRun= 03 00 % % // two-digit run number
-Storage:Documentation:DataIOFilter string ID_System= % // BCI2000 System Code
-Storage:Documentation:DataIOFilter string ID_Amp= % // BCI2000 Amp Code
-Storage:Documentation:DataIOFilter string ID_Montage= % // BCI2000 Cap Montage Code
-Visualize:Timing:DataIOFilter int VisualizeTiming= 1 1 0 1 // visualize system timing (0=no, 1=yes) (boolean)
-Visualize:Source%20Signal:DataIOFilter int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
-Visualize:Source%20Signal:DataIOFilter int VisualizeSourceDecimation= 1 1 1 % // decimation factor for raw brain signal
-Visualize:Source%20Signal:DataIOFilter int VisualizeSourceTime= 2s 2 0 % // how much time in Source visualization
-Visualize:Source%20Signal:DataIOFilter int SourceMin= -100muV -100muV % % // raw signal vis Min Value
-Visualize:Source%20Signal:DataIOFilter int SourceMax= 100muV 100muV % % // raw signal vis Max Value
-Source:gUSBampADC intlist SourceChList= 0 0 1 128 // list of channels to digitize
-Source:gUSBampADC intlist SourceChDevices= 1 16 16 1 17 // number of digitized channels per device
-Source:gUSBampADC int NumBuffers= 2 1 2 32 // number of software buffers to use
-Source:gUSBampADC string DeviceIDMaster= auto // deviceID for the device whose SYNC goes to the slaves
-Source:gUSBampADC int FilterEnabled= 1 1 0 1 // Enable pass band filter (0=no, 1=yes)
-Source:gUSBampADC float FilterHighPass= 0.1 0.1 0 50 // high pass filter for pass band
-Source:gUSBampADC float FilterLowPass= 60 60 0 4000 // low pass filter for pass band
-Source:gUSBampADC int FilterModelOrder= 8 8 1 12 // filter model order for pass band
-Source:gUSBampADC int FilterType= 1 1 1 2 // filter type for pass band (1=CHEBYSHEV, 2=BUTTERWORTH)
-Source:gUSBampADC int NotchEnabled= 1 1 0 1 // Enable notch (0=no, 1=yes)
-Source:gUSBampADC float NotchHighPass= 58 58 0 70 // high pass filter for notch filter
-Source:gUSBampADC float NotchLowPass= 62 62 0 4000 // low pass filter for notch filter
-Source:gUSBampADC int NotchModelOrder= 4 4 1 10 // filter model order for notch filter
-Source:gUSBampADC int NotchType= 1 1 1 2 // filter type for pass band (1=CHEBYSHEV, 2=BUTTERWORTH)
-Source:gUSBampADC list DeviceIDs= 1 auto // list of USBamps to be used (or auto)
-Source:gUSBampADC int DigitalInput= 0 0 0 1 // enable digital input:  0: false, 1: true (enumeration)
-Source:gUSBampADC int DigitalOutput= 0 0 0 1 // enable digital output on block acquisition (boolean)
-Source:gUSBampADC int SignalType= 0 0 0 1 // numeric type of output signal:  0: int16, 1: float32 (enumeration)
-Source:gUSBampADC int AcquisitionMode= 0 0 0 2 // data acquisition mode:  0: analog signal acquisition, 1: calibration, 2: impedance (enumeration)
-Source:gUSBampADC int CommonGround= 1 0 0 1 // internally connect GNDs from all blocks:  0: false, 1: true (enumeration)
-Source:gUSBampADC int CommonReference= 1 0 0 1 // internally connect Refs from all blocks:  0: false, 1: true (enumeration)
-Storage:Documentation:BCI2000FileWriter int SavePrmFile= 1 1 0 1 // save additional parameter file (0=no, 1=yes) (boolean)
-Storage:Documentation:BCI2000FileWriter string StorageTime= Sun%20Oct%2002%2014:50:01%202011 // time of beginning of data storage
-Source:Alignment:AlignmentFilter int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
-Source:Alignment:AlignmentFilter floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
-Source:Online%20Processing:TransmissionFilter list TransmitChList= 16 Fp1 F3 F7 T3 T5 O1 C4 FP2 Fz F4 F8 C3 Cz Pz Oz O2 // list of transmitted channels
-System:Core%20Connections string SignalSourcePort= 49163 4200 1024 65535 // the SignalSource module's listening port
-System:Core%20Connections string SignalSourceIP= 127.0.0.1 127.0.0.1 % % // the SignalSource module's listening IP
-System:Configuration matrix SignalSourceVersion= { Framework Revision Build } 1 2.0 2245,%202009/02/03%2015:58:46 2009/02/03%2019:09:02 // SignalSource version information
-System:Configuration matrix SignalSourceFilterChain= 8 { Filter%20Name Position%20String } DataIOFilter 0 gUSBampADC 1 NullFileWriter 1 BCI2000FileWriter 1 EDFFileWriter 1 GDFFileWriter 1 AlignmentFilter 1.1 TransmissionFilter 1.2 // SignalSource filter chain
-Visualize:Processing%20Stages int VisualizeAlignmentFilter= 0 0 0 1 // Visualize AlignmentFilter output (boolean)
-Visualize:Processing%20Stages int VisualizeTransmissionFilter= 0 0 0 1 // Visualize TransmissionFilter output (boolean)
-System:Configuration matrix OperatorVersion= { Framework Revision Build } 1 2.0 2245,%202009/02/03%2015:58:46 2009/02/03%2019:09:02 // operator module version information
-System:State%20Vector int StateVectorLength= 14 16 1 30 // length of the state vector in bytes
-Filtering:SpatialFilter int SpatialFilterType= 0 2 0 3 // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
-Filtering:SpatialFilter:SpatialFilter intlist SpatialFilterCAROutput= 0 // list of output channels for the CAR if used
-Filtering:SpatialFilter:SpatialFilter matrix SpatialFilter= 4 4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 % % // columns represent input channels, rows represent output channels
-Filtering:P3TemporalFilter int EpochLength= 500ms 500ms 0 % // Length of data epoch from stimulus onset
-Filtering:P3TemporalFilter int EpochsToAverage= 1 1 0 % // Number of epochs to average
-Visualize:P3TemporalFilter int VisualizeP3TemporalFiltering= 1 0 0 1 // Visualize averaged epochs (0=no 1=yes) (boolean)
-Visualize:P3TemporalFilter int TargetERPChannel= 1 1 0 128 // Input channel for which to display ERP data
-Filtering:LinearClassifier matrix Classifier= 2 { input%20channel input%20element%20(bin) output%20channel weight } 1 4 1 1 1 6 2 1 // Linear classification matrix in sparse representation
-System:Core%20Connections string SignalProcessingPort= 49164 4200 1024 65535 // the SignalProcessing module's listening port
-System:Core%20Connections string SignalProcessingIP= 127.0.0.1 127.0.0.1 % % // the SignalProcessing module's listening IP
-System:Configuration matrix SignalProcessingVersion= { Framework Revision Build } 1 2.0 2245,%202009/02/03%2015:58:46 2009/02/03%2019:09:02 // SignalProcessing version information
-System:Configuration matrix SignalProcessingFilterChain= 3 { Filter%20Name Position%20String } SpatialFilter 2.A P3TemporalFilter 2.B LinearClassifier 2.C // SignalProcessing filter chain
-Visualize:Processing%20Stages int VisualizeSpatialFilter= 0 0 0 1 // Visualize SpatialFilter output (boolean)
-Visualize:Processing%20Stages int VisualizeLinearClassifier= 0 0 0 1 // Visualize LinearClassifier output (boolean)
-Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
-Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
-Visualize:Application%20Window:ApplicationBase:%:DisplayVisualization int VisualizeApplicationWindow= 0 0 0 1 // Display miniature copy of application window (boolean)
-Visualize:Application%20Window:ApplicationBase:%:DisplayVisualization int AppWindowSpatialDecimation= 8 8 1 % // Application window decimation (shrinking) factor
-Visualize:Application%20Window:ApplicationBase:%:DisplayVisualization int AppWindowTemporalDecimation= 4 16 1 % // Application window time decimation factor
-Application:Window:ApplicationBase int WindowWidth= 1440 640 0 % // width of application window
-Application:Window:ApplicationBase int WindowHeight= 900 480 0 % // height of application window
-Application:Window:ApplicationBase int WindowLeft= 1600 0 % % // screen coordinate of application window's left edge
-Application:Window:ApplicationBase int WindowTop= 0 0 % % // screen coordinate of application window's top edge
-Application:Window:StimulusTask string WindowBackgroundColor= 0xffffff 0x505050 % % // background color (color)
-Application:Sequencing:StimulusTask float PreRunDuration= 1s 0 0 % // pause preceding first sequence
-Application:Sequencing:StimulusTask float PostRunDuration= 1s 0 0 % // pause following last sequence
-Application:Sequencing:StimulusTask float PreSequenceDuration= 2s 2s 0 % // pause preceding sequences/sets of intensifications
-Application:Sequencing:StimulusTask float PostSequenceDuration= 2s 2s 0 % // pause following sequences/sets of intensifications
-Application:Sequencing:StimulusTask float StimulusDuration= 2s 40ms 0 % // stimulus duration
-Application:Sequencing:StimulusTask float ISIMinDuration= 1s 80ms 0 % // minimum duration of inter-stimulus interval
-Application:Sequencing:StimulusTask float ISIMaxDuration= 1.5s 80ms 0 % // maximum duration of inter-stimulus interval
-Application:Result%20Processing:StimulusTask int InterpretMode= 1 0 0 2 // interpretation of results: 0 none, 1 online free mode, 2 copy mode (enumeration)
-Application:Result%20Processing:StimulusTask int DisplayResults= 0 1 0 1 // display results of copy/free spelling (boolean)
-Application:Sequencing:P3SpellerTask int NumberOfSequences= 40 15 1 % // number of sequences in a set of intensifications
-Application:Speller%20Targets:P3SpellerTask matrix TargetDefinitions= 36 { Display Enter Display%20Size Icon%20File Sound } A A 1 % % B B 1 % % C C 1 % % D D 1 % % E E 1 % % F F 1 % % G G 1 % % H H 1 % % I I 1 % % J J 1 % % K K 1 % % L L 1 % % M M 1 % % N N 1 % % O O 1 % % P P 1 % % Q Q 1 % % R R 1 % % S S 1 % % T T 1 % % U U 1 % % V V 1 % % W W 1 % % X X 1 % % Y Y 1 % % Z Z 1 % % 1 1 1 % % 2 2 1 % % 3 3 1 % % 4 4 1 % % 5 5 1 % % 6 6 1 % % 7 7 1 % % 8 8 1 % % 9 9 1 % % _ %20 1 % % // speller target properties
-Application:Speller%20Targets:P3SpellerTask intlist NumMatrixColumns= 1 6 6 1 % // display matrices' column number(s)
-Application:Speller%20Targets:P3SpellerTask intlist NumMatrixRows= 1 6 6 0 % // display matrices' row number(s)
-Application:Audio%20Stimuli:P3SpellerTask int AudioStimuliOn= 0 0 0 1 // Audio Stimuli Mode (0=no, 1=yes) (boolean)
-Application:Audio%20Stimuli:P3SpellerTask matrix AudioStimuliRowsFiles= 6 { filename } ./voice/1.wav ./voice/2.wav ./voice/3.wav ./voice/4.wav ./voice/5.wav ./voice/6.wav // audio stimuli rows files 
-Application:Audio%20Stimuli:P3SpellerTask matrix AudioStimuliColsFiles= 6 { filename } ./voice/a.wav ./voice/b.wav ./voice/c.wav ./voice/d.wav ./voice/e.wav ./voice/f.wav // audio stimuli column files 
-Application:Speller%20Targets:P3SpellerTask floatlist TargetWidth= 1 5 0 0 100 // target width in percent of screen width
-Application:Speller%20Targets:P3SpellerTask floatlist TargetHeight= 1 5 0 0 100 // target height in percent of screen height
-Application:Speller%20Targets:P3SpellerTask floatlist TargetTextHeight= 1 10 0 0 100 // height of target labels in percent of screen height
-Application:Speller%20Targets:P3SpellerTask stringlist BackgroundColor= { caption } 0x80FF00 0x505050 % % // target background color (color)
-Application:Speller%20Targets:P3SpellerTask stringlist TextColor= 1 0x000000 0x505050 % % // text color (color)
-Application:Speller%20Targets:P3SpellerTask stringlist TextColorIntensified= 1 0x0000FF 0x505050 % % // intensified text color (color)
-Application:Speller%20Targets:P3SpellerTask intlist IconHighlightMode= 1 1 1 0 4 // icon highlight method 0: Show/Hide, 1: Intensify, 2: Grayscale, 3: Invert, 4: Dim    (enumeration)
-Application:Speller%20Targets:P3SpellerTask floatlist IconHighlightFactor= 1 0.5 0.5 0 % // scale factor for highlighted icon pixel values
-Application:Speller:P3SpellerTask int FirstActiveMenu= 1 1 1 % // Index of first active menu
-Application:Speller:P3SpellerTask float StatusBarSize= 10 0 0 100 // size of status bar in percent of screen height
-Application:Speller:P3SpellerTask float StatusBarTextHeight= 8 0 0 100 // size of status bar text in percent of screen height
-Application:Speller:P3SpellerTask string TextToSpell= % // character or string to spell in offline copy mode
-Application:Speller:P3SpellerTask string TextResult= % // user spelling result
-Application:Speller:P3SpellerTask int TestMode= 0 0 0 1 // select targets by clicking on their associated stimuli (0=no, 1=yes) (boolean)
-Application:Speller:P3SpellerTask string DestinationAddress= % // network address for speller output in IP:port format
-Application:Text%20Window:P3SpellerTask int TextWindowEnabled= 0 0 0 1 // Show Text Window (0=no, 1=yes) (boolean)
-Application:Text%20Window:P3SpellerTask int TextWindowLeft= 640 0 0 % // Text Window X location
-Application:Text%20Window:P3SpellerTask int TextWindowTop= 0 0 0 % // Text Window Y location
-Application:Text%20Window:P3SpellerTask int TextWindowWidth= 512 512 0 % // Text Window Width
-Application:Text%20Window:P3SpellerTask int TextWindowHeight= 512 512 0 % // Text Window Height
-Application:Text%20Window:P3SpellerTask string TextWindowFontName= Courier // Text Window Font Name
-Application:Text%20Window:P3SpellerTask int TextWindowFontSize= 10 4 1 % // Text Window Font Size
-Application:Text%20Window:P3SpellerTask string TextWindowFilePath= % // Path for Saved Text File (directory)
-Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20320 % % // IP address/port to write to, e.g. localhost:20320
-Application:Localization:Localization string Language= Default Default % % // Language for user messages
-Application:Localization:Localization matrix LocalizedStrings= { German } { TIME%20OUT%20!!! Waiting%20to%20start%20... } Zeit%20abgelaufen! Warte%20... // Localized user messages
-System:Core%20Connections string ApplicationPort= 49165 4200 1024 65535 // the Application module's listening port
-System:Core%20Connections string ApplicationIP= 127.0.0.1 127.0.0.1 % % // the Application module's listening IP
-System:Configuration matrix ApplicationVersion= { Framework Revision Build } 1 2.0 2245,%202009/02/03%2015:58:46 2009/02/03%2019:09:02 // Application version information
-System:Configuration matrix ApplicationFilterChain= 3 { Filter%20Name Position%20String } ConnectorInput 2.9999 P3SpellerTask 3 ConnectorOutput 3.9999 // Application filter chain
-
-ÿUÿä Ü³Â ÿÇÿèýîÿ´ÿ9þSò¿Î àu       > ,ÿ¬ ²„%h ùÿ_üÿuþÍÿ›ÿ	þB¥¿Î àu       6 šÿB ¿\q M y „þáÿ þ³ý ¿Î àu       N Ø ” ôÚ í êa —þe ¹þýƒ¿Î àu       ò5D˜â£u­ þÿ;ÿ—¿Î àu       uùQí™Æã ôÁ ZýN='ÿ_z¿Î àu       ,rx–q¼± ú_µ Ãýx9ÿ4î ¿Î àu       ½ &Ò€ú· 	=© çþœFÿ	€¿Î àu       b K5[ œ ,• Yÿom!ÿ$#Ï à{       . ã Âëƒ ç;n ÿë  Rþk ‡ #Ï à{         HˆÚ wÿba( ªþb îÿýaþÿ#Ï à{       ŽÿBŸ ƒ (p /ÿá Sæÿfþ ûÿ4ýýºÿ#Ï à{       7ÿ06 âÿ§ E JÿÜ ÿÜÿÊý¹ÿ] 7ýýçþ#Ï à{       ¢ÿÙ   ‰ÿc 8 zÿS¼ “üjÿž 8ýÆü*þ#Ï à{       q O Ùÿcÿ]  ¡ÿ½‡" "üúþŠ ý“û¢þ#Ï à{       Ð jÿFÿ)ÿ/ Ðÿìÿ® ŒýuþN ¾üÓúþ#Ï à{       Øþ×þOÿ8 Ûÿ› ŠÔ $ cÿyþl ×üuúÎüŸÏ à|       ;=ÿÿ& Ó u vÄw 1 Nÿ	°ýsúýŸÏ à|       š Åÿäþß p
-ÔúEŠ   , ƒxþ½ûÄþŸÏ à|       ,ÿ²ÿDþý ¹'­áù = ˜ÿm g™þýiþŸÏ à|       mþXÿ&þò ºå „Ï‡ þÿ#ÿ/ õ Iþ¼üwþŸÏ à|       øþÊþqþÂ 6 [Ú ÔÿWÿÿu “ýÜû!ÿŸÏ à|       §ÿþmþW ïÿOÿØ³ÿ¬ÿÅÿôþ2 Åü'üIþŸÏ à|       vÿ¦ýsþ7 cÿòþÙ àÒÿ¼ÿVÿ´þˆ ¾üÎü›ýŸÏ à|       èþ±ý¥þG |ÿÿã Àùÿ³ÿ=þ¼þ9ýQý°þÐ à€       Õþmý[þ¼ÿ=ÿñþž Sÿÿþ`þÇ ýíý¯þÐ à€       ÿZýçýßþ½þmþ$ ˆ „þqþ8ÿÍý ]üÆýEýÐ à€       ÿ4þþ‘þÆþSþøÿ× Ÿþ“þùÿÂýÌÿBü
-ý˜ýÐ à€       ‚þ8ÿdþÈþ*ÿ™þïÿ‡@ÿ
-ÿ†ÿ6þ “ü˜ý²þÐ à€       Iþ¶ÿ«þ@ÿÿÎþÑÿÕ®ÿIÿêþºþ” Þü*ÿfþÐ à€       Óþ HÿÐÿ²ÿèþáÿÒôÿrÿýþÿ7?ýŽÿŽþÐ à€       pÿs Íÿ	 ˜ÿÞþ8 ã. °ÿÿ(ÿ×“ýùþkÿÐ à€       ÞÿŠ ¨ÿÞÿXÿ¹þŸ &R áÿ àþ[ºýèþ›þ—Ð À„       # ‡ Gÿ|ÿEÿ–þË .] ·ÿ–ÿpþ¶÷ýÂþ‘ý—Ð À„       ~ÿ… ûþ´þÿXþŽ †! ÿòýÀý²þþMþ—Ð À„       +þ ƒþÞýrþöý	 › xÿFþÈüËü5ËýþZþ—Ð À„       ìý4ÿþÅýÔý©ýÿS ¶þþäüóûy@ýFþ/ý—Ð À„       îþdþ&þ%þýýlÿÏ aþXþdý•ûã üüþåý—Ð À„       dÿ,þ“þ3þ‹ýËýÃÿWyþØþÈý¦ûÔ ý†þÿ—Ð À„       ›þ-þ×þþ¢ýþ3 S{þÿ#þÆû0ýYÿ=ÿ—Ð À„       Žý·ýpþWþ¾ýþ ¯ ÿý»þþ¬ûÝ öüÞþþÑ  ˆ       ý×ü~ý²þÇýþSÿÉÿý+þ9ý‚û _ü&þÿÑ  ˆ       Ïü3üýÞþëý7þÍþ7ÿTüÕýÜüˆûoÿçûõþÐþÑ  ˆ       ¾üüýÓþxþ¬þ³þ)ÿü¦ýªý§û"ÿüãÿaþÑ  ˆ       ý2ü7þÆþÿÿ þ9ÿLü]ýMþ¶ûîþü¸ÿÿÑ  ˆ       uý üþýÒþ@ÿÿYþ ÿ€üýWý³û£þÒüˆÿ) Ñ  ˆ       Æüàû4ýíþ1ÿøþ.þ)ÿ\üäü:üÒû„þÍüuÿÿÑ  ˆ       ¿û~üýGÿÄÿ„ÿ›þ™ÿ\ü&ýýpüçþxýÿ@ÿÑ  ˆ       sü°ýÊýîÿÞ ² ™ÿ/ ýËýÿ‘ý»ÿÙþ–ÿì “Ñ  Œ       Ëþáþçþ] Ä¹’ µ Aþ¦þ¿ÿœþ— 	 Î “Ñ  Œ       B ©ÿƒÿ? 
- Fÿgÿÿÿ“ Ð ï “Ñ  Œ       ßÿ³ÿ4ÿ# ñ÷ ~ÿßÿÿÿN¯  ì“Ñ  Œ       
-ÿWÿ þ¹ '$í 	ÿ. š ÿ¥è S ã“Ñ  Œ       ½þxÿÎþ½ÞÏSï ¼þr '¿ SŸ“Ñ  Œ       ¸þóÿJÿe¯c_ë óþh VÍÀeÁ »“Ñ  Œ       Ñþ ÷þ•þƒl ÿôÿ14‰€ ‹“Ñ  Œ       &ÿ jþÕù†Î Õÿäþ“ÿ	 q:Vœ Ò €       uÿÂþ.õ ÈÿÕþÿùÿÚeW( CÒ €       kÿ/{ÿ!›fþÿ×þ‹ÿ4 ó°SÈÿÔÒ €       4ÿyÖÿ·°’œ ÓÿƒþÛþ.ÿa†ÑËÿrÒ €       ÿ"i ß¸. xÿAþþPý²9QÿE Ò €       ÿŒÈÈ~‰ ‹ÿ“þ5þÁü›}{VþÀÒ €       ZÿUZä(¹R 	ÿÿRþííÒþÝÒ €       ·ÿ9:²aÉ”• ÿÞÿ9 êìIÿæÒ €       ÿ}_dj£ §þéÿ~ @W_¯þr‹Ò `”       ªþv 3 OÄ 4 F þeÿZÿF € Vþ€‹Ò `”       ¯ý¼ÿWÿrf ùÿ«ÿÉÿyýÔþiþOÿû ¡ÿ]þ| ‹Ò `”       öütÿ)ÿ ²ÿ&ÿmÿwÿ2ý“þþzþ¤ ½þý1 ‹Ò `”       ØüKÿ=ÿ ÿÅþšÿ–ÿiýÛþ\ÿ/þ’ Sþ2ý:‹Ò `”       ý<ÿÿt   ÿg 9 ÿý—ÿáÿµþ°þ‹þF‹Ò `”       ¼þrÿõþSç ³ÿh	ºþT , ÿê†ÿÙÿù ‹Ò `”       Tÿ§ÿßþ‘7 ö}Zÿ² Ä  ”% . ‹Ò `”       åþ©ÿ¢þ"(A €›ÿ¹ K ÇO ¦ °Ó `˜       þîÿšþÎ Vœ $‘¢ÿË Ñ ‡ Úƒ µ #Ó `˜       éþ’ )ÿË ¹ý aÏ¸ÿŠ ö 
-÷ ™ÿ¶Ó `˜       ÿ¸ mÿ¥ Šó Dysÿî { Ýñ ºþ7Ó `˜       `þûÿÅþI £ ^ V\ jþýÿ |  cþRÓ `˜       šýFÿ9þ Ìÿ¬ÿúÿ{ÿVýåþsÿ¿ÿ'BÿQýÏÿÓ `˜       ˆýIÿŸþ2 qÿXÿÿÿý‰þ(ÿÿÁ ÿ.ü Ó `˜       þ×ÿ“ÿ Ÿÿºÿ:ÿ ·ýÿ²ÿâÿ¥ÿçû‹ Ó `˜       6ÿ¾  bi Ø J Ãþ Å ± Þ,Gû¶ÿ‡Ó  œ       ƒ |(÷:þLÿŸÿÝ Gm©Á×ùúÿ‡Ó  œ       è N¤ Æ'\lVÁÿå Ä ‹³­ø‡ÿ‡Ó  œ       S  ÌÿTƒ *üiÿy K ;AcL÷Œý‡Ó  œ       ÛÿL °ÿ{U "¥=ÿQ ¸ # ëôý‡Ó  œ       
- |  é‰ .X”Cÿy `SñºòWý‡Ó  œ        U * ©l Ù6‘'ÿf :.Ìnñ…û‡Ó  œ       é ¼ÿH ñ  `“ •Üþ×ÿW € • ¾î‰ù‡Ó  œ       Zÿ« ¯ Ðÿ-óÿ¸„þ+ÿ¨ÿÀÿK ëÿ{ì[ùÔ          .¶þDÜ ¬ÿQèÿJ‹þ3ÿñÿAÿ  ÃÿUë‘øÔ          ¢=ÿÅÐÿñÎ ¿tÿV 9õþž u ñé(÷Ô          $. Ö!2 ÜD›Â é½Ôþ¹¤;çööÔ          — ¯az Ž„òŒÓÿžuOä»õÔ          ÊÂ ×ÈÉ x -Ô  v½á¨òÔ          ÞU.óTI&	@úÎ KæÞQñÔ          lÚüS¾ î•µ	#Å¼ sŒåÛ(ñÔ          !1  $tŸ	sšÅJ (8ÙÖîÔ  ¤       ôä ¸ ) úÉ
-– ‰=ÚÖ¬ìÔ  ¤       ÙE§yú ‡·19¼‚”ñ(ÕòìÔ  ¤       e	¬÷’	]éÂ!SÔìÔ  ¤       U	á<GÁ0S5•ÑvÊJ^ÒôèÔ  ¤       \	¬dÄïX'\Üq	û°düÏlçÔ  ¤       	åt"¢þwí
-5!ŒIÎ¡æÔ  ¤       C	*žÞÔ¬*“´ñN04×ÌêãÔ  ¤       íx2ƒX¹w âvó‘uµÊ˜áÿÔ à§       	·ýÀÂ].Ž+ðÉ=áÿÔ à§       €	œ4nÓ3™òf`z`ÚÈvàÿÔ à§       ™	j”¬ùþ7É
-å/—BAœƒÅÆÞÿÔ à§       ÖÞ$Ly:	
-:BÛ˜ @¿3ÁeÝÿÔ à§       ïÅï ÛMl	«g:/ jñ ‹¾°ÛÿÔ à§       	Èè-lM)	¨›s sé ¾ ÚÿÔ à§       «V/PžAZ©iÁ &„½ÚÿÔ à§       s‰ >ö¹ÛsÑŠŠ ý L½GÚ{Õ à«       ’ë ­ÿ6EÒ_{š ’œ ­½õØ{Õ à«       q 7 âœ©L6<œˆdÿAU ß¼JØ{Õ à«       œ; W4²s°àXÂÃÒþ( £»Ù{Õ à«       g 9$É³c“düyÝþph I¼ßØ{Õ à«       ðD·Q²w½‹V ÿ~|–½^Ø{Õ à«       N‘‹‘…áö±k µïì½‡Ù{Õ à«       2ÂÄ t!1nó Šm¾ƒÚ{Õ à«       ië\Ä ÕìŽÙ+Ž©ù¾]Ú÷Õ À¯       3\5"E	ÏËyO'så^¾*Û÷Õ À¯       éˆ­ ¾ Ü	 ¿Ä!™•¾6Ü÷Õ À¯       _>Ì  R–aâ®W<ì»9™¿ÉÛ÷Õ À¯       j•Á… v³"œY:w.X‡KÁRÜ÷Õ À¯       -ƒö3	žJÇéºžù'ÂÅÞ÷Õ À¯       ðöô E	Du¶¼‰ÌüÊÂžß÷Õ À¯       øNÿ] –J	Š–½-ÀÙÂáÞ÷Õ À¯       Cgªþc `€	÷k%ÃÓŸÙ¬_Â·ßsÖ  ³       Ö/ÿÙ F´	‚I©‹dnÑxËÂÆàsÖ  ³       Ñÿ1¹	î]!,VÍ?tÃ
-àsÖ  ³       §VNF 	§¢sÁõC¢DŒÂ·ßsÖ  ³       ¾î–S„	cƒÂÌÀbrZÞÁOàsÖ  ³       9‡1ªq°	Å–-W^±ŸâÃàsÖ  ³       #ð)þ=
-»è¢üøágTÛÆ¢àsÖ  ³       ÜÁ3ÈK˜
-5øsÒ!»Í˜ÈŒâsÖ  ³       Â—Ù YÒM
-£G3MµrlÉ¹âóÖ  ·       =8•ÿ~
-ßbñ –M,-€ÉáóÖ  ·       …Æ: ÷ 1‡
-ÈÊ ’ÙgôŒ¤É³âóÖ  ·       äÓv8rr	ïº¯Ê2¥ËçäóÖ  ·       Âlj·Jë<h LÓ¼¦)ÎõäóÖ  ·       ÷ @ 
-¾,êVpÿŸƒ¢.õÏ/åóÖ  ·       Kã dÿçŽÿáúþL”ÂÿQ€ÐÐæóÖ  ·       wô  ½bºëÿXêæqÑ$çóÖ  ·       röE¾™(Fqÿ©…^snÑço× €»       °†ŸÜ/P ÒèÓ.z²Ñ”èo× €»       ì%+ÿÞMBÕ¶; ‚—šô2„Ò½èo× €»       ‚`þxõ·
-feV CwÊôÒço× €»       ›¨èÿ_oã
-DÙ¬ tJ@>wCÒ<ço× €»       ‰lP‘(	u™¨@õ_z CÒØèo× €»       X„ß	<{Ë<Ý¦6$\ÓÃéo× €»       nÔÐ÷]
-À/Õ#¾.óÈhÔ;ëo× €»       kKŠ‘ 
-Bà½ôÏuúœ‹[Ô íë× `¿       Ìzìðüô
-õ¯×/+vqüÓìë× `¿       
-ßUÖ	q0É•‹¦a ÓÙéë× `¿       D¬§[bo	£h¢°¬°îüÑêë× `¿       `+ˆÜnA	æàeBÐ˜¯ÑÒêë× `¿       aÏÑÁô¼ŸäÔ:€>ÜÑêë× `¿       vÞ,Pè¢†ìIXÐÐ·éë× `¿       w[Û×ö‡Œòî:w²VÆÐ$êë× `¿       Óy‚éQ:­'9Á†Qò’Ñ¯égØ @Ã       ]Ìk F•€Pž=‚ê5-zÑGêgØ @Ã       º³Ë °«´$_ø/é+aÑ~ìgØ @Ã       7Æ¬®_å…K'v>ØÑÊìgØ @Ã       tÎ‰…ìÔL ï¨õ%ÅÒ„ëgØ @Ã       àÀÊ»ÚÊ·•š `&Ó6ìgØ @Ã       u‹¸Û”ýD^T¤–6}Ô¹ígØ @Ã       âè¾5 ó]è¤ò;ÖÕígØ @Ã       ªJ6àÍY'TÁ•ÒÂÇ¨Ö]îçØ  Ç       w¥
-F`Š±¶åA>ðßk×§ïçØ  Ç       ±¿h_W1]¡$~²ÙïçØ  Ç       0É~#ù>ª±ý¡‚à}ÌÛ§ïçØ  Ç       1 Ãõ4IÄT±cÝVñçØ  Ç       ^ÑÔ ®æõ],wZ'"æñOßòçØ  Ç       –<Ñþº±Ç	S	lmxÄà°ñçØ  Ç       ô¨ßþää®ªV{¢e-(¶áËòçØ  Ç       ¢Ñ` ðˆo½† ˆ˜ï¼Îã5ôcÙ  Ë       nóDè¿-2©) öîx’4³æOôcÙ  Ë       ¡ A×!Ó#aZ–ÿA[yBwè|õcÙ  Ë       ¨7áöN¥–ŸÿvÉ]’´ˆér÷cÙ  Ë       ›1KcàdÝÊwÿrÝc®÷7ëX÷cÙ  Ë       kƒF¿"¸PE‰ÿrîÃTïì,÷cÙ  Ë       çPÌ·$–âòÿˆÈ@NÃîûøcÙ  Ë        G>D“Ê×ž®ÿê¼ßªtZî:ùcÙ  Ë       ãZq’®g¸þ¥Ç„™ìýößÙ  Ï       •g 6 Í¨ÐYþè‘j0ˆ×éößÙ  Ï       ¶‰lædD) ÿK<Qpéí÷ßÙ  Ï       Š:Ëyy2œ WT)jfëÃ÷ßÙ  Ï       9ãvéô¥±Æô `§=ÖøxëD÷ßÙ  Ï       V©í{ûþRÞ¬;ÎŠéÊ÷ßÙ  Ï       Ÿ¶Ú ªâå•Ô´•¸A‡è÷ßÙ  Ï       ‚ï* OáGùÕÀ QH™ÇîæõßÙ  Ï        <’ p'ý†‹ ó–)Q&æBö[Ú àÒ       ³ñ ³r5dûo }TFç‰÷[Ú àÒ       \ •”Òæ´Œk +Â¦ZÉ]éà÷[Ú àÒ       À_C ‘‘Åmm¯ Z`"¨…êBù[Ú àÒ       }ÿŒ Õ€ƒ/Õ!°˜Õü›ìQû[Ú àÒ       ›#“(	”N_ö/CDÊî¶û[Ú àÒ       ;Å ½)	':÷h$ZÈðÔû[Ú àÒ       <È7®õp¼ ¨	ˆ²?‹ñ¶ü[Ú àÒ       wþ”œ¡Ï
- _˜Ö;1òüßÚ àÖ       CL_ÿ c¬/ ŠÿIÖ Ø6T^òûßÚ àÖ       Äs7dÍ•…ÿÐÌ È2B2òqüßÚ àÖ       (vØ• ¯TƒÿnG’óþßÚ àÖ       Ñ'ØÕøTŽìþ¦Wýw§]ôýßÚ àÖ       Uüÿ«	I·Qëý’ ª€ëÄô‡üßÚ àÖ       ß— {ÿy3d+ Øü›ÿè"EAõ‰ýßÚ àÖ       Z ­ÿ HøEPÿÈûÞþãÿY]˜	ö*ýßÚ àÖ       Ðþ	ÿcBIx œþðúYþ±ÿÑÄ ¿TõÓûWÛ ÀÚ        þ¤þuWL`Ûÿþnúþõÿ4K ×àó´ûWÛ ÀÚ       mþ\þ"ÿ€’›Ãÿþ_úOþ µ ûÿì ôWûWÛ ÀÚ       ?ÿ¿þ*ý‚~Zc Ûþ6ûÿ ¿ 1 € õOúWÛ ÀÚ       D ÑÿJþï«mS* Õü(  Ñ ˜ ;õ¿úWÛ ÀÚ       W¹ Ñ ·ŠJ (þ-L4,” jõ†ûWÛ ÀÚ       ïRûXyc‡Æþðº.q UöìúWÛ ÀÚ       Éð¥ÕÌÉÃNÿx•'L– ýöõúWÛ ÀÚ       vO1í@c(øÿõß‹Âò ˜÷åûÓÛ  Þ       AGI±mâ ²µ(sVÉø„ûÓÛ  Þ       o,sÌ³‚ÇÜ Ž(»ÿÁwùJûÓÛ  Þ       tò@„òÌ.à äÙîóàù¶üÓÛ  Þ       !D1 @jsO`( 8ì“=_Vø·üÓÛ  Þ       ú¥ þ?Þ‹†4ÿÿ"›â ß÷èúÓÛ  Þ       4 Ü ÿýnù^n¿ ÿ®|ýOâBê÷ûÓÛ  Þ        ‹ÿ|—2éé  d, øÈ:ù•üÓÛ  Þ       ½ ‡ Iæý pcg£ûÞüOÜ €â       €uáEEH,wÏ9~z±üÿûˆýOÜ €â       ÷óC¨ùP¥kžùiå4oüÿþOÜ €â       0ÇDÀû¤“<|UÕ¿ÝýëýOÜ €â       “» åŸ1ôY‡!÷ebý–ûOÜ €â       ä#ÜmµndÌ¶ ÚÝ¢¢úüüOÜ €â       e{W[YGV#¸nMþ¢ýOÜ €â       Fÿ,„%ñOíÚÊNü–s÷ÿþOÜ €â       çûŸ÷`âüg(	&©øø©§kˆ úþÏÜ `æ       ¸üäÞc
-£vƒ°GÞüåð ÜÿÏÜ `æ       kƒFÃ0‚²S.€Û™þÏÜ `æ       à„ é Eæ’_‚!ñûaÛýÏÜ `æ       7$ Zòí(Œ=RQÿS,ƒ–?ÿÏÜ `æ       ®|Ig³J;<¿\Ÿ%MÉÎÿÏÜ `æ       Â>ç¯d$ð¡•Ùùú8ÿÏÜ `æ       'ÿÿæ(ý@Ä£Ä†±	5îàù;ÿÏÜ `æ       eû ÿÿO+/¢,ëœòŸô×<:ÿKÝ `ê       ¥ú2Ôþ‹T@ŽÆ|¶€ 
-ëbœþKÝ `ê       Uþöýÿñ›Œvü7k&ýwD/;ÉÿKÝ `ê       ö€ÔNˆ Æ7‘Õü˜JÚ¯KÝ `ê       ÖžCó.šÛ/ÓÿGíu$KÝ `ê       …
-ˆ× Ë^Nê¤@h	 KÝ `ê       z cßúó•IJÀ¾ƒ‚À KÝ `ê       šƒÝV-‹ývÏÁ«ñé×"KÝ `ê       sü‰ï ÍkOsí
-¡n§^zî ÇÝ @î       ðõºû ä²+Œ
-ô‘3ÛÒ	‘ÇÝ @î       mùZ¼ í žæü®	ÀÔj?ÇÝ @î       ì5% ô:…Úÿ  ú$þBÙ]{œÇÝ @î       ³K î÷_ áúØÿcâýÜE06ÇÝ @î       7Í  ÿŒ2Húÿx b³ºÇÝ @î       ¼G ÿkÄÅ™ ,üÿs P]Ð¸ÃñÇÝ @î       _) “ vŒ_ wÿ2ÿN7¸bÇÝ @î       ï¥ %qÙ½¢ Ñ4 Cï|þ»
-°CÞ  ò       U» G­ö°Û ƒû Ý\*‰
-xCÞ  ò       Ã æÿêÿRYñ , é¯ÿö ¿¦	ÒCÞ  ò       †ýÿüýÒ © ûìÿ9ÿÔ™û ñ  páCÞ  ò       LüÇþcÿn z r;ÿþ@þ	 Aþºÿb ÒÿÃÛCÞ  ò       ÌýÀþ} @ ¶ Vêþ‡ûþáþ¥ÎÿG  ÎšCÞ  ò       íÿeþÿ³ +yÿþðûYþÞþ9õÿr ~ ËÇCÞ  ò       2óýþ½Éó„ÿçüÕþ¿ÿá / × Ó § ¯CÞ  ò       W¯ýÛý`X€% “ýÿó zþh 6æ ßÿð ËÞ  ÷ €     Ú ¥ýÈþ§­Y Çýýþ¦Dÿb )í ÿ„ ËÞ  ÷ €     ÿþÔÿYÏE ²ý÷þ-ÿ` Ü /Âý.ËÞ  ÷ €     Ëû_þ¿ÿ6êaT äþ8ÿ-7ý“ ¿ lFý/ËÞ  ÷ €     ¯ûßýºþQq ^ÿø ký¯ Í ‚ýËÞ  ÷ €     øüæþ#h{r qnþ½ Uÿ© É ´üÊËÞ  ÷ €     cüÄ 8Z£U dý’ý
-  ÿŽ • ÚûºËÞ  ÷ €     ˜¡üÒäç˜* ú3ýrÿ‘þG _ »€ü™ËÞ  ÷ €     Úÿýí¿ òûäý÷ÿ¢ÿ n Ÿþ?ß  ú €     zýTý  ä¶ûÿÿÿñ ) ' „ „ÿŽ?ß  ú €     ,ý›ÿ¡É§ìÿþÄÿG}  ] S–þ×?ß  ú €     ‡õüÇÿ«²y 8ü ÒÒ m  “ü¼?ß  ú €     mÿ™ý9 nÓþ›XþÀ Ošÿ é iÅúî?ß  ú €     sùîý“ÿýË4Fë+Aø <Æ`ûï?ß  ú €     ¡ú(ýŠþè~L¿Ä †¥÷Ùÿ¬7ýÓ?ß  ú €     ¬üÒþ+S€£þ k£Üÿí Ëåý×?ß  ú €     øµû¯ÿF ‡Æxû ŽÔ	 × ç*þŠ»ß àý €     êÛûßÿ²ÿ^à Qül Xœäÿœ MÿÖ»ß àý €     ýÛû’ÿ“ÿ€ ÏÞ‹þk d	lÿ] R§ÿ»ß àý €     Jüšûÿ N 7¶©ÿ# áp9ÿ å Q ·»ß àý €     [ NûRÿþ Ø YÂÅÿ ¼b’ÿñ 53»ß àý €     †û¨ Æk¥*  < âÿÑ BÆU»ß àý €     ùûQáaQ÷ ' ’©ÿ$ õ .Ô»ß àý €     7>ûÔ ^" ð ¡  ÿjÿQ $ÿ»ß àý €     ,YûÏ Ï ª Ã ] [þ«ÿˆ)þêþ½ÿ‚Ô7à À €     ÙûÄ £ C © ‹ÿ
-üÿãÿ þ>þ¢þrÿÎð7à À €     žlúÀÿ¨ Ñÿr ¼þ†û þHÿêþìýfþÿ?U7à À €     …ÿúFÿñ Œÿ* Qþü‘þÇÿA þ?þ“þF	è7à À €     .ý£ú\ ÀËÿ fþPüÔþ« ²ÅþkþyþtÌ7à À €     ×ûDû­;$ * þ¹ûÿ„Žÿ²þµþ“N7à À €     ?÷†û)ÇM @ ‹þIüzÿÖ m¹ÿÏþÌþu¹7à À €     °óôûñ˜æ Û Üþ¨ÿ¢ AZþÅÿÿÿ¯ç7à À €     KûüzcÔâ}ÿÝT#
-ýûÿ”ÿÅÿdä·à   €     ŽÂúÆÀ€ÿþ\ ò®¬ÿÿÉÿ’[
-·à   €     ¹	RùX u I¼þ¦÷ïþª &ØþÿÿþÝî·à   €     ‡Iù¯ÿ;Gÿƒ <þÆõ×þåÿÞ
-bþÌþœþ¾8·à   €     ¦þú™ÿÔ ÑþO ™þeø¸ÿ@ ±‚þ@ÿùþXê	·à   €     ýú¹ÿ’ åþg ƒÿûH „àþ÷ÿŽÿD
-·à   €     “ýû÷ÿz ’ÿë ‘ Úû‘ ÜTƒÿ¿ m ?@
-·à   €     ©ÿðû› i 8 ’1|û_E <F%q·à   €      ÜûáÿÉÿÉ jûGC«§ÿÑ ½	3á  	 €     LýÏúfEÿÖþÿ ÿÿ…üò Ð`ºþ÷ÿ Q3á  	 €     "û`ú£lÿÈþ 6ý™ ë¾þÙÿáÿô¿3á  	 €     -üöúj% ŠÿØ‡ûŽ ª—±ÿ† Ž W3á  	 €     üsûà & ^ÉùŽ ùFY ¨k3á  	 €     Dùúúòÿ7 6jø' 0 Ñ Ä Ò¾3á  	 €     7úˆù‹þ² Jÿ ×ÿÂøýþl  ÿÍÿÊÿ=µ3á  	 €     œÿá÷àý®ÿwþÊÿÂþ^øyý9ÿMÐýŒþ³þ¿3á  	 €     ÉóöÂþFÿrþ2ÿiþÞö¨üÇþ{ýÆý/þ›n¯á € €     	þòö  ¸ÿþþ5ÿiþbõöüàþ÷Ðü¦ý0þ»¯á € €     ‚úl÷Xh Bÿ]ÿJþ?õÃýÿ®ìü®ý#þ'N¯á € €     üñ÷š ë Aÿ€ÿèý#ö7þÿ,ý~ý÷ý+“¯á € €     =þøÿµ .ÿ|ÿRýöÃý…þÇ îü
-ý³ýð¯á € €     †ùì÷^ÿÇÿÓþÿ¼ü@ö‹ü³ýN`ürüýœ¯á € €     ºð7øU ÿ³þÌþ’ü´öµûJýÏLüJü®üB¼¯á € €     ³ï€ø+ D eÿ'ÿæüø¼ûlý5ïüÖüý¼¯á € €     ÿøc÷¥ý«  ¤ÿý0÷Qû+ý´Dý1ýáýQ+â ` €     ’õ+üV  —ÿÒü3óßùü³ý²üüý Ž+â ` €     ˜ÿâôý Ÿÿÿ,üÛïÈøûß ·üÌûfý4!j+â ` €     Œù;õ ýµÿ>ÿsþ‰û)ðâø·úvü+û¨üZ Ì+â ` €     9÷¶õHýMÿÔþþzûò’ù?ûßNü9ûTüGŠ+â ` €     ‰ùgö”ý:ÿŠþþ)üôTú4ü¸{üÞûŸüàÛ+â ` €     ûE÷ûýÿ{þ5þêü1ô?ûý´¹üzü7ý…+â ` €     Üøó÷Nþ‘þŒþxþzýÛóWüÉýÉãüèüÓýé£+â ` €     PöƒøâÿkþÆþúþNþìó+ý€þy>ý‹ýwþ§â @ €     Ûöùÿ?ÿ¯ÿnÿkô|ý&ÿ÷Íýiþ&ÿto§â @ €     £ù1ùöÿÝÿÅÿs k $õ™ýÐÿ,Gþ/ÿÁÿÀ”§â @ €     >ûÔø"üÐÿÍÿó Þ ®õ–ý] ðhþ’ÿ ¿p§â @ €     `ú‡ø#ûõþHÿð Í £õhýp c<þ«ÿ5 ë´§â @ €     ìøîø¡ýNþñþÈ Ô gõšýl ñ&þýÿr Ø§â @ €     Âø°ù›ÿQþùþ® 9‹õpþÉ $$þ~ » h§â @ €     ,ú6úªÿwþâþo Šöõaÿïäý· ½ › L§â @ €     ü’ú«ÿcþÈþR ¼„ö !„ýß Ì g Ã'ã @ €     mýÃú# ‚þÿ» _÷‹ 3ËÂýZ>5 î'ã @ €     Bþšúp !ÿ˜ÿP'ø^ 3Ó'þ¿žÒ!0'ã @ €     =þOúÿÔÿ‚©É÷Šÿ§ Æ%þŒŒ#ÿ'ã @ €     .üòùšÿ¥ÿJú ^ö²þ©ÿ”—ýì D¬"f'ã @ €     Þøù YþÿË = Øôþ™þ©äü3 Ð !"»'ã @ €     ãö³÷aýqýZþ ÿôSý¨ýh9ü…ÿ "‰'ã @ €     x÷A÷üîü·ýŠÿúý!ôÁüý<¼ûÿ„ÿã!c'ã @ €     (ùï÷‚ýGýAý9ÿ…ýô«ü­ü™ «ûãþ'ÿU"£ã   €     Úù²øýýíýÍüêþ˜ýbóÆü|üÔ ýû­þÆþ#£ã   €     žùïøþ&þküvþ“ýŸò×ü”üdüXþZþl"ó£ã   €     áùãøIþÞý3üëý^ý–òýýT•ü÷ýþýR!£ã   €     …úÿøSþ›ý*üqýRý9óCý¦ý“™üªý´ý8!‡£ã   €     hú–ù•þÅýyü<ýxýùóbýèýb³ü‘ýý/!ƒ£ã   €     rùbúÍÿ-þýCý‘ý“ô[ýÛý‹õüýŒý¯ 	£ã   €     ¡øÇú¯ Žþ„ýCýžý#õCýáý­ 'ýzý†ý!S£ã   €     }ù»ú$ þÉý9ýÁý¯õ)ý þw þülý’ýÈ!Mä  ! €     ü}ú>ÿúýÆý!ýÐýìõþüDþ0cüpýýž Wä  ! €     -þ,úTþý^ýÞü­ýâõÅü.þkâûeý\ýÐÚä  ! €     uþJú‡ý(ý4ý×üºýö÷übþŸUü¢ý?ýÎ´ä  ! €     êý&û:þúý¿ýIýþ~ö©ýùþ­†ýTþ¸ý¼ä  ! €     ý	üðÿ–þMþ§ý.þŽöFþSÿgþæþþêøä  ! €     üUü5 ÃþWþ¥ýöý´ö þWÿ£þÿ×ý‡¬ä  ! €     Šû]üÒþ¿þ"þsý¿ý@÷ëþGÿãþàþeý¾Kä  ! €     tû¢üþ‘þØý5ý¤ý[÷
-ÿÿ?Hþ°þ0ý·Ÿä à$ €     iûýàþ”þ¨ýIýáýËöõþ"ÿT`þ×þný¤Ÿä à$ €     2üuý+ ýþïýüýÈþ²ö"ÿïÿêåþ«ÿhþœ¾Ÿä à$ €     ­ý[ý@ÿNþ°þÅÿ@÷˜ÿÚ IÿŒ ¡ÿ'_Ÿä à$ €     Eþ®ü³ ÿþþ™þöÿO÷ŽÿÒ ƒÿ‘ úÿCÿŸä à$ €     vý¹û¾þþOýþ˜ÿ¢öÊþùÿÞ‹þúÿzÿïWŸä à$ €     1ü9ûýümþæüýPÿÿõþÿÿïý—ÿÿø‚Ÿä à$ €     uûcû
-ýŽþ…üýÿ¼õÐýkþæ]ýsÿçþÑ6Ÿä à$ €     Ÿû˜ûâý[þÔû’üêþÎõ™ýþwéüUÿþ>6å à( €     %ü°û]þþû¢ü-ÿ>öxýZþ³ðü˜ÿ–þiå à( €     üü9ÿmþü9ý¿ÿËöŸý ÿtý7 4ÿy§å à( €     ˜û¶ü± *ÿQüSýíÿ÷Áýdÿ¦¾ýp Yÿb9å à( €     êûKý<¢ÿòûâüèÿ™÷íýÍÿ’¯ýP ãþ( Ÿå à( €     …ýþýM ÍÿÓûËü_ Áø¡þ± ÈÜý¡ ñþ7 jå à( €     ¦þiþ{ÿyÿüöüÖ §ùaÿW”ýýKÿž Så à( €     ˜ýÿýCÿ¿þïû³üi nù8ÿô Ïlý¹ ïþå!’å à( €     £û*ý ÿ:þ–û3ü…ÿáø_þ Ø“ü Cþ^"©—å À, €     {ûêüfÿþÁû&ü^ÿ/ùûýùÿ\ü< Eþü!p—å À, €     ×üýE bþ„ü“ü  úhþ  ­öüð Óþš"—å À, €     äü#þ" ÿBýþü¹ ›úêþ;Ž´ýG2ÿ¥#r—å À, €     EûYþ‚ÿCÿ«ýbý× Rúÿ\:þý)nÿð#˜—å À, €     jú@þxÿ¦þÀýçýå Ìù&ÿ9û×ý"Ïÿ‰$ø—å À, €     DûðýÎÿÓý‚ý"þí uùèþä Pý(ùÿ9%Ñ—å À, €     nü|ýB ˜ý%ýÈý¬ iù2þd Øýä «ÿl$m—å À, €     Úüõüïÿ®ýýdýf ¦ùQý  jÎü‚ Jÿx#†æ  0 €     òü…üiþýSýšý“ 7úÏüüÿ¾üj Rÿ($Ûæ  0 €     ñüaü|ýmýéýþ÷ Çú·ü ›Ùüx ˜ÿÈ$9æ  0 €     ïûSüÍýzý/þ	þù ™úˆüðÿ2°ü. ‰ÿä#¿æ  0 €     éùü<þvýþ­ýÆ ¾ù7üyÿ7RüÀÿMÿù"0æ  0 €     ½øüñþ^ýÝý ýë 3ù>ü6ÿ•Fü·ÿuÿ["yæ  0 €     ]ù üàÿ=ýöýËý,[ù‚ü-ÿ¹üÊÿ¶ÿ!¾æ  0 €     búþûmÿ(ýþÌý’ùwüÿé•üÿ‹ÿ2 ¥æ  0 €     „úÇûêý`ýêýœýá _ù?üÿrü+ÿKÿ¼ Ø“æ €4 €     !úþû6þ¬ý§ýHý± ùaüÿEü7ÿ`ÿ† Ý“æ €4 €     ñùOüs —ý;ýÒü\ ùÓü(ÿý3ükÿTÿû@“æ €4 €     ú;ü.WýÖünüóÿ0ùý5ÿ!Tü]ÿÉþÔÂ“æ €4 €     •úTüÓÿZýý‹üåÿùðüQÿ­ÊüÿmþŠ“æ €4 €     ”ûøüwÿrýôý;ýI Nú¿ü‘ÿ?vý÷þ·þU0“æ €4 €     ~ü,ý@ Sý`þÔý ûzü»ÿ†¿ý½þòþ2ð“æ €4 €     ŒücüÛÿ/ýäýÚýN Oûü|ÿñkýOþžþJŸ“æ €4 €     ÷û‰ûôþDýLý—ýÉÿÊú‡ûðþkýôýþ„ôç €8 €     pû]ûdÿšý%ý]ýJÿøùûƒþOòü»ý¡ý~Éç €8 €     û•ûN .þHýIýàþ´ùúdþä*ýwýPý`ç €8 €     ûÐûu ºþ€ý‡ýªþSútúkþ]•ýLý“ý°ˆç €8 €     ©û
-üu Õþ¢ýþÈþ@ûìú„þˆþtý9þ«Dç €8 €     Xübüÿ ¡þ·ý|þÿÝû‡ûÔþ
- “þ¿ý˜þX›ç €8 €     1üüüÅïþ6þÿNÿBü×û`ÿ/ üþôýÑþŸç €8 €     ãûýåâÿ/ÿâÿ•ÿ¹üÞûÖÿjZÿþ\ÿÛàç €8 €     —üýC âÿŠ  !ýÉû  ºžÿDþöÿ@©‹ç `< €     ¦ýlýß ×ÿ Ù ¥ `ýûû5 Qáÿ½þS W…‹ç `< €     æýâýÔ V ‚¨ý°ü¯ 9a ¡ÿ¹ A&‹ç `< €     ‘ýYþAï ’ !¨ý7ýØ å _ ø ü/‹ç `< €     !ýþýÐF8 – ÍìüÔü3 ã F ƒ Ø—‹ç `< €     vüWý°é Æÿøÿð (üüQÿw~ ¢ÿÈÿ?[‹ç `< €     ”ûý¹’ àÿÏÿr =ü—û×þ5 5ÿˆÿšÙ‹ç `< €     ÍúÊü1z 1 ÈÿV ‡üû–þ¦ ÿžÿÌ‹ç `< €     búü? Ÿ e ¥ÿ 	üRúAþ± ¾ÿÿ¿ÿq\è @@ €     ú,ûùþñ { yÿ­ÿû¡ùÙý• aÿòþÝÿœpè @@ €     Nùqúæý/> ÿÿAúùJý‘ÿÿ}þÿ=è @@ €     ¥øùù²þNèÿ¯þuþØùÁø·üqý	ÿöýôþj_è @@ €     ãøúÜ 7ùÿÑþþºùÙø’üªüqÿßýñþƒè @@ €     ¿ù‡ú€× ? “ÿ"þôù2ùçüðýàÿDþ«ÿ]Tè @@ €     púLû ´ M m ]þ{ú–ù[ý—ÿ$ áþY *‘è @@ €     ÍúüåÿÒ  ä ÁþûúÄýl I xÿŽ è @@ €     #ûPü ² ‘ÿÕ ÿ{ûœú9þ) 3 Íÿ^ Â*‡è  D €     ¨û}üê ž ÿ‹ [ÿþûûòþ¾ÿ(    é“‡è  D €     õû-ý¨¼ úþz £ÿÙü¬ûöÿÀ  ¶ ? ®	‡è  D €     ¨û9þ> $ÿ¥ óÿ·ýXüÊ šy£ ®‡è  D €     ¾ûBÿ« Œ Vÿû 4 Eþ¹üíï æ‡è  D €     ý ¼U°ÿr Àþæü$ï11v;‡è  D €     >þ3 mêñÿãG ÿÌüÇ ¡ ‡ãYŽp‡è  D €     Dþhÿ-p·ÿqpÿµþüîÿàÿøÉK‡è  D €     þ|þTÅ Zÿ  zþÓý1ûÿÌÿø  [ „»é  H €     ûýßýœ T -ÿôÿÊý>ýŽúžþS þÿòþfÿ}Ãé  H €     +ýýÅ ¤ÿóþ…ÿ=ýVýúUþr õþÕý€þC]é  H €     Düòû¬ÿ.ÿ¬þgÿ½ü‘ýuùûýTÿ5þðüþUé  H €     füûþOÿŸþzÿ1üDý»øjýýýçýaü÷ý’Ìé  H €     ÜüÈú´ý9ÿÒþnÿŠûˆü3ø´üáýyýãûÂý9é  H €     ‰üÓúsþÌþ&ÿ`ÿ(ûðûøAüzþéüyûTý’Øé  H €     Îû@ûÀÿçþ’ÿˆÿ<û¤ûVø)üþÞü@ûý“1é  H €     VûÈûÍ pÿíÿ°ÿFûeûtøùû~üWýû	ý£!é  L €     öúãû ¤ÿ ¡ÿöúûJøvûIû×ýÞú.ýéµé  L €     ¤ú†û_þ´ÿúÿ©ÿÂú»úøñú^ûWþûwýÈÙé  L €     ûRûdþçÿO 8 ,û‰úwøìúºû
-ÿÃû9þËé  L €     ÎûŒûµÿ°ÿ	ü²úgù~ûqû§ÿÄü@ÿq5é  L €     “û¨ûæÿâþ“Züûïùü˜û¸ÿ9ýÿh…é  L €     ’ú~ûbÿQþ½OüûYùñû6ý}ÿåü1ÿªµé  L €     ¯úmûÿÄþ÷²ûöú†øûéþŽÿwüåþ£§é  L €     «û-ûGÿ±ÿ1S4ûºú.ø(ûøþ¸ÿDüÛþÄOûé àO €     tûŽúþùÿ1‹ïúZúð÷ú«ý~ÿü²þàSûé àO €     útúúýòÿ0ŽÍú÷ù§÷úüHÿõû›þœ0ûé àO €     yùðú3ÿe =žú±ù\÷ùöúÿöû†þ…sûé àO €     <úþúÿç °É rúšùóö`ùûD óû2þÃûé àO €     ûüúÜý®È ªúèùäö¦ùœüý 'ü1þ Êûé àO €     CûÆû5þ55.-ûƒú÷Oú˜ý…Ÿü¶þUIûé àO €     Rû§ü¼þ$…Owûû]øñúìü‰âüáþ·ïûé àO €     ûý#þ+…5oûnûÄøuû`ücÛü…þè¸{ê ÀS €     hûTý“þ|±\pûìûùüVý‚öü_þÅ({ê ÀS €     ÓúSýŽÿ®¾{¢ûiü¡ùŸüwþh0ýcþD{ê ÀS €     ¨úˆü>ÿ 2ÚûÂü úÖü3þ› -ýþ™á{ê ÀS €     âû©û|ÿŒn? ãû	ý úÀü*ýÿÞüvý;{ê ÀS €     ‡ý!û[ ß ¤ÿ­û:ýÝù­ü×ü§þcüý{ê ÀS €     ûý¡úòþ2 ~ GÿjûMýÝùÓüRýþüûÏü³ü{ê ÀS €      ýÎúý" ‰ )ÿwû§ýPúRýÂýþüÌüË{ê ÀS €     ¡ýüZþ1	(ÿÔû}þ0ûþþÓþˆüýI¸÷ê ÀW €     ¦ýýÒ z)µþåûÿ“ûFþqþöþ®üèü¹ú÷ê ÀW €     &ý«üÂ B ’ °ýuûÎþñú×ýAþ þQüüº÷ê ÀW €     åüùûkÿcÿ Ìü$û·þSú¦ý¨ýyýü©ûê÷ê ÀW €     (ý»û¦þ¦ÿèÿKü,ûÿ†ú%þÀýŠý@üéû:¿÷ê ÀW €     :ýkûþíÿ—ÿÔû"û`ÿîúµþÍþ­ý.üüƒ÷ê ÀW €     SýIûzþ vÿ©ûûÜÿ[û"ÿºÿÖýøû"üÒ¶	÷ê ÀW €     7þ#ü‹ ¸ 3 iüKûaüÔÿâÿˆþ>üŽü™”
-÷ê ÀW €     lÿEýOS;‚ý¥ûP‰ýo Æÿ1ÿÃü	ýÀ+së  [ €     Üÿ#ýý Ã 3‘ýŒû¶¨ý Éÿªþ˜üüêQsë  [ €     ©ÿüåýªÿ ·üIû ýHÿãÿ”ýüµûOE
-së  [ €     íÿüHýÁÿwÿ™üÄû9ý@ÿ  Éý{ü¾ûÎÄ
-së  [ €     È Pý`ÿ“ äÿÂýöüÇ
-þ \ (ÿþÜüÌæ
-së  [ €     uJþë L M æþìý™þ“ w àÿ#ÿæý2së  [ €     á‡þQ‡ÿüÿ1ÿbþJÿÈ ¢ÿ`ÿDþzysë  [ €     „Ðþµÿÿ´ÿXÿôþ# òzªÿ•ÿyþÊ	së  [ €     :Uÿ=  Íÿw1*E " ÿôóë €_ €     ’™ÿ][€ LÀ¹«ã ¼ óÿU¯óë €_ €     L„ÿ¿eSÏÍ &Ñ”ï\#‘ T5óë €_ €     1ÿƒ ¦}Å† F5“meõ I .—óë €_ €     Äÿ¾þÿK¹Ë Æÿ:úÿ-q©  Bÿ8Äóë €_ €     åýžþÁþD Ã ÈÿBÿmòþ AÞÿKÿqþhâóë €_ €     yþÿÒÿ­ÿŠ ¤ÿ}ÿï´þyÜÿ_ÿlþ”þóë €_ €     Á Åÿö âÿï üÿðÿœéþ°Ç L Þÿ¿þcóë €_ €     •Çÿ Ã ÿ§ÿ!ÜþkáÿE »ÿiþB”oì `c €     . »þ5 Øÿ¹ÿdþˆþ`Pþp åÿ˜ÿÐþJýoáoì `c €     ¿þ`ýÁÿÄÿÿvýhýÖ·ý†ÿ6 Ýþÿýpü@³	oì `c €     ¬þ¤ü N „ÿýèüÊ`ý ÿ ’þºýnülÄ	oì `c €     Œÿ˜üd å ûÿýýäüºýµþÆÿ¨þ–ý§üO~oì `c €     a ìüœ ¨ÿGþçü`£üwþ¨ÿÈþCý¢ü‘oì `c €      zý × ÿbþÃü7¤üPþŠÿ«þèü•üfZoì `c €     4þìýÕþm ÂþJþ[ü8Êü7þNÿ1þwü>üvoì `c €     äû°ýþ…ÿþ¢ýgûž 4üÕý¸þWýŸû/ûð
-ëì `g €     /ûÛü­ý„þ6ýÒüRútÿû-ýaý’üÏú;úDîëì `g €     Æû\üýAþýÑüúÉþ†ú¾üëû‰üÈúúšÒ	ëì `g €     û‘ü8ýtþSýdýtúÿ°úžü¾ûòü2û`ûLmëì `g €     (ù¬üþ4þýýšúÀÿÛú‹üÔüöüOû­û¦‹
-ëì `g €     Þù2üþ¯ýÆüpý”ú ÷ú±ü˜ý¢ükû}û–å	ëì `g €     ëüÀû5ý˜ýÉü£ýëúåÿNûý‰ý¨üèûVûUï
-ëì `g €     rþ"ü0ýÛý#ýAþ~ûÿ¡ûZý¡ýSýüuû£qëì `g €     nþJýÊýPþ2þeÿ0ü¥ÿÖû†ý>þ{þ+ý]ü­mgí @k €     Dÿ/þ›ýÿðÿì ý +üáý»þœÿæýÛýFãgí @k €     U ñýpüÍÿIí‚ýI Lüþºþ þ¡þ:¡gí @k €     O 1ýÛûëÿ¾gýT êûîý½þùÿÉýiþzggí @k €     Çÿÿü ýÙÿÏÚýp nû¾ýÛþÔÿ¢ý#þŽGgí @k €     Úþòü4þ}ÿ¦ü åú9ýòýhÿHýÖýFgí @k €     3ýHü†ý‘þó 6}ûCÿúüæûzþDüýRgí @k €     ü‘û"ü þ­ ù ÌúŠþwù(ûÂú³ýUûŸü|’gí @k €     ZüRûŠüEþ-Ëúòýmùúú]ûwýû­ü™ãí  o €     jüûÞþ|þ‡OÚúýXùàúâûFýû­ü¨ãí  o €     Áúdú„ÿeþç3Ïú-ü,ù|úúúîü÷ú‹ü›îãí  o €     ˜øâùTü¢þCûüLùIúnù¹üëúü¦®ãí  o €     é÷¼ùùÿhã hûü{ùnúÞø¦üÖú9ü<ãí  o €     ÕøÌùùèþO° vûü\ù„ú;úfüú¹ûÕƒãí  o €     ÈùÓùú(þš Oûôûêø>ú=üÝûìùoûÂGãí  o €     ’ùéù‹úŒýÜÁ Mû ügøÎùXüxûù{ûÏxãí  o €     ôøhúCûÑýî>gûü>ø€ùæùÖûãùúû$‡cî  s €     ù@ûüáþJÖHûÊûžø=ù0÷×üŒúòüé²cî  s €     ¥ùîûiýÌÿ0ïúBûùëø!÷±ýçúÑý­Fcî  s €      úXüÒþÔÿ~¶©úû-ù×ø{ùþñú
-þ5/cî  s €     ¾úãüý pÿtúû/ùLùûNþûçýqÿcî  s €     ªûgýÝ ’ÿC‡zúü^ùïùDú¥þGûÑýÞïcî  s €     8ûoýõýýÿ0„Iú/üCùúºø­þ@û«ý‡~cî  s €     šù%ý~ü…ÿç Mú°ûùø¾ùÛ÷4þðúˆýicî  s €     ïøäüZýMþ'_ïùZûLùzùë÷ªý¦úÐýù•ßî  w €     ¦ùÆüÆýÐýýà>ú™ûú›ù	ùšý únþ)=ßî  w €     |úëü¾ý…þõ|Ûú!üúú|úþöúÿ:{ßî  w €     ûXý?þ™ÿÑöWû}üCúTúëú­þ{û€ÿÕ†ßî  w €     …ûŒý:þ> =ûuüù9ú_úÝþªûxÿÞ;ßî  w €     ?ûýÖý na½ú5ü²øÑùøùoþEûÓþïeßî  w €     ªúÎüÿ–ÿ®¢•úFü\ø¸ùÿùþÃúPþqßî  w €     „úý. yÿ§qâú¶ü½øú¥ùþúNþÜßî  w €     úTýþÁÿáíúìü÷øDúù6þDú%þ5[[ï àz €     ­ú‚ý.û ·­úìüïø'ú§ùWþ2úÓý%B[ï àz €     $û3þüU \µúý|ù$úæú¬þ…úþkn[ï àz €     ¿û·þ&ÿk ŽXöúAý^úFúçúõþÌúhþ  [ï àz €     Òû°þ  ­ ¡€2ûmý£ú’ú”ú&ÿÔú|þóL[ï àz €     êú½þX îÃ†ûçýZúûzûkÿÛútþ¥,[ï àz €     Üù£þ™ÿ1Ø«ûFþôùpû:üFÿ£ú<þ;d[ï àz €     úÛýçþÉ²‚Wûþ|ù4û¿û‚þú­ýw[ï àz €     hû=ýÿ'œGû»ý4ùëú9ûãýËùgým‰Ûï À~ €     ìûaýa Þ<ûŠý(ù»úûÖý÷ùŽý¼Ûï À~ €     Ãú4ýY ý ¦ºúý¥øúÚúãýàù?ýjiÛï À~ €     ÖøYüñýµ èÕ þù°ü®÷;ùÅúïýrù„ü3gÛï À~ €     ™÷=üÆüË ôÝ Ñùýn÷6ùþúsþ“ùqü|ªÛï À~ €     ¤÷îü8þÂ Tnoú¬ýøþùëúÿhúéüK;Ûï À~ €     ¯ø×üÿÜÿ)¤û§ýtø„úÔùöþ$û ý¡
-Ûï À~ €     ©ùüsþÿÁcû?ýaø~úRø~þuûëü$	Ã	Ûï À~ €     §ùäûcþPÿc-—û6ýTøNú›ø9þŠû/ýxH
-Wð  ‚ €     Eùúû‚þ¡ÿ¥ûBý:øøùÿúÚýOûeýø²	Wð  ‚ €     (ùzûòýPÿi|÷úØüÝ÷€ù”ü,ýÅú/ý‘ÐWð  ‚ €     Üøšú&ýÔþ7q‰úBü—÷Zù#ü¶üUúèüQWð  ‚ €     gø7ú¸üÕþ^¡ÆúüÚ÷Ôùpûâü^úàüwÑWð  ‚ €     Bø¡ú›üpÿ«ÛbûŽü—ø úûRýÂúý-5Wð  ‚ €     ý÷;û2ü ÑÊ©ûTýPù;ûGú`ýíú;ý`°Wð  ‚ €     h÷dû´û š……û
-þºùûOúãüšúÿüÌÉWð  ‚ €     ˜÷vû<üGÿ@ƒˆû£þ5úùûüZüPú–üÔâÓð  † €     Îø ü¥ý±þ4ÑÏûÿû‰üîý2ü]úüâ6Óð  † €     ¼ù•ü¹þ»þ?ÒßûÚþíû½üýý/üIú‚ü± –Óð  † €     ÝùÁüºþÿû|´û‰þ3üühüüúMü°ŠÓð  † €     »ùòüùýfÿ wÁûÚþNü§üûü'úIü«þÿÓð  † €     ;ù;ý›ý­ÿ3¬Üû„ÿ‘üüüûEü•úü¿ Óð  † €     øÖüëý_ÿaxŠû…ÿqüËü¬ûünúüJÿÿÓð  † €     N÷çûiþ¥þš óúôþÆûüEü¢ûÝù+üý þÓð  † €     æ÷¾û9ÿ;þ ãúßþVû»ûwüxûàù%üF %ýOñ €Š €     ºø^üUÿcþ« äqúcÿIû×ûÙû¥ûiú:ü© =þOñ €Š €     xø^üÕýRþ` ´Zú…ÿéúÝûÄúzû{úõûû(þOñ €Š €     Ô÷˜ûüWýâÿ‘Fúêþ<ú•û2úÌúöù·ûw
-ýOñ €Š €     }÷ûYüSü¼ÿÄkú(þîùWûCúWúµùìû8wýOñ €Š €     ¥öÔúæûMüÞÿ¬ú¿ýú@û=ú‹úýùDüsßýOñ €Š €     üõÄúlüÏü xÊúþKúBûú&ûUú‰ü®þüOñ €Š €     Í÷fûµþ)ýš î ûÿíú½ûúéû—úëüþfýOñ €Š €     aûü! \ýH–˜û•¸û¹ü¥ü¥üñúFýFÛþÏñ `Ž €     Xýýoÿ…ýÄ:'üGîû<ý4þùü!ûQý&
-…þÏñ `Ž €     ¶ü£üüþÀýÏ\üe—û™üZý±ü»úý˜
-ýÏñ `Ž €     oûDü $þü€û‡ œû·ûÖû6üúÚü‘	œýÏñ `Ž €     UûÍüÄ ªþmÓ0û¶ Bü´û½û(ü¬ùÏü(	gýÏñ `Ž €     lü¥ýáÿÿ–/+ûLÏüAüHüuü¼ùý	
-ýÏñ `Ž €     DýÁý·þíþ¯‹û<yü_ütü~ü¸ùýŸþÏñ `Ž €     ›üëüÃþþO…²ú0 0ûªû;üíûpùœü>	iþÏñ `Ž €     ,ûþû‚ÿSýÕ ~¤úÿýù·ú û7ûCù7ü{üüKò @’ €     Ùú üW  ýï  Eûßþúzúæúû¹ù¶ü­ýKò @’ €     ¤û­ü‡ HþxØiü¼ÿûûÓú¯ûÐú­ýÉÞþKò @’ €     ü ýrÿ¤þÛ]„ý‚ ºûæûçû‘üü3þUÿKò @’ €     ªûý{þñþø6\þ¾ ßû‰üœýýBýœþèÿKò @’ €     xûtþmÿRÿËJ(ÿÎ üýÎþŽþNþšÿCØÿKò @’ €     »ûÿ¿¶ÿg+ ð …ü¶ýÿ„ÿKÿ †²ÿKò @’ €     üÿÿrþÿ+(í à ÀüûýæþG 1 KÊŠþKò @’ €     »û²ÿ| ìÿ'‚6 ‹üˆý'þ ¥ 2ÕðþÇò @– €     £ú$ÿ#ÿŽÿÞë ,ÿ
-ü½ü
-ý„ ‚ ¤YðÿÇò @– €     £ùÎþ¤ÿÿè xâ †þ˜ûzüÊü† * Êp®ÿÇò @– €     ïù¿þæÿ¢þô”þtû ý¸ý¦  ùûL Çò @– €     cûùþöÿ¿þÂÍxÿ½ûÒý]þ‹ b•QÇò @– €     VüGÿâ ŽÿwÂ	ì·ÿcü[þþÉEæµ²Çò @– €     ühÿ½< »
-2 (ýrþ(þKÉ[XÇò @– €     ÿû“ÿü; ‹Ùßj âýmþÿ}ëŸ 'Çò @– €     éüôÿe «f‚ Xþ’þàÿ®â|³!åCó  š €     Cý% •2 Yœ¶ [ 4þ”þ§ÿª¤ý¤#¬Có  š €     /üÊÿ; [×ÿÌÿ‰ý>þçþû ƒd%ëCó  š €     ,ûëþßþyÿV¾+ÿOÿËüêý€þM a:(ÕCó  š €     û
-þÁýYÿ‚¾ùþoÿJüâý`þ lÿ²Ö+Có  š €     ¼ú³ýfþ ÔÌÿâÿüþ#þA	ÿEÏ-$Có  š €     ¿ù{ý°þ­ ÛŠÿþ ¼ûþþ_šþo®-Á	Có  š €     öùßüþo bÇ
-¹þýÿ.ûÙýþð %þäF-±Có  š €     ›û˜ühþöÿ
-·þr õúÈý$ÿŒ &þoF-÷Ãó  ž €     
-üîüvÿ°ÿ8
-*ÿûèýÿ§ Žþ~H-Ãó  ž €     ²ùÂügþ[ÿ4
-Vÿß §úÅý‘þœ Šþ)h-G	Ãó  ž €     $÷óûüÿýŠ	­þèÿ´ù#ýÛýêÿÄýßø,ôÃó  ž €     ¬÷´ûnýúþ£'¸ý"ÿ…ùˆüùü ÿÖüe;+§Ãó  ž €     …úüeÿ²þt Þ3ýßþYúiü´üYþXü‹ ¾)BÃó  ž €     üöûYÿaþ‰ÿCþüäþùúnü°ýñý7ü. D)ÖÃó  ž €     zü¤ûUþ[þÏþ—ü&ÿ¸ú!üqþ™ý ü¸ÿå'ˆÃó  ž €     ûóûBþhþIþ®>üÈÿKúÞû×ýŠýÎûÿ×%µ?ô à¡ €     ½ù&ý_ÿ‚þLþC­üÞ ¾úfüØýBþZüÿ‚%j?ô à¡ €     ’ùsþâ ÍþÍþ5™ýüsýYÿtÿ›ý¸ÿ&§?ô à¡ €     	ûðþ{ÿ ÿ2þýRýàý©ÿ> •þ3 ¼&;?ô à¡ €     ýàþIÿ“þÌÞýš)ýoýþ‰ Þþ å%B?ô à¡ €     "þ%ÿA`ÿ3þXþó þü'ýýýÜ !ÿ p$§?ô à¡ €     vý¹ÿÕ ÀÿHþ\Õþ?ýü±ý =ÄÿÇ '#Ä?ô à¡ €     ÷ûëÿžÿ°ÿSþÂÿæý{þIH ~¦#”?ô à¡ €     îúªÿ!ÿÔþþËÿý­þ˜ÿõ 6 cq%m»ô à¥ €     ’ú¤ÿ þéý‰ÿëJý8þçü¹ àÿò a&–»ô à¥ €     •ú ì cþ>þCÿ3‹ý´ý4ûö ÝÿÐ&¾»ô à¥ €     ÑûJ ý ÿÝþzÿÇ¤ý¾ý™ü¬o ¯E(Ï»ô à¥ €     iþM 6| gÿu ?¹ýTþ Š]“7* »ô à¥ €     ãÿ; °« Fÿ9@H´ýÃþüìô4™+;»ô à¥ €     ,ÿ  ¥* þ¦‡ûcýºþv›ñ5­,ð»ô à¥ €     ‚þÛÿ4µÿDþg¾VýÊþ¥ a!ß-Ø»ô à¥ €     Óþ “ üÿÿ&‡äý7ÿs º°â.7õ À© €     uþA bÿš —ÿ4˜2þUÿ"  ÌÜ/Ú7õ À© €     IýÝÿ·þ’ )ÿs²³ýªþPÿ·o4Î0³7õ À© €     îüËÿJ Ðÿ®þ‚v ÕHýßý@þ‘¹«Ñ0Ì7õ À© €     >ý¬ èvÿÿºj ¥ýôý¥ýQÝM®0	7õ À© €     þü + ñÿ’aþÝþWþw¬’#2(	7õ À© €     vüºÚ0 ²Üýÿ ù-$4Ð7õ À© €     QüiÖ 4ÔÿÔé€‘ý„ÿï ¾ô©˜4Ÿ	7õ À© €     “ür­ç \ÿXÉý2ÿÚÿA>½¨4Á
-³õ  ­ €     fý°Rx ÿJá õ/þÿjþ®…ð4æ	³õ  ­ €     °þË•C ÿ¢ –vþ`ÿˆþIu65|	³õ  ­ €     öÿç³ +ÿ=¾ —Îþ Ìÿd?l[6³
-³õ  ­ €     ¬ Í»kÿ:ù *	ÿ… “ ‰(E8k
-³õ  ­ €     ôÿtâþÁ× ÷¹þ; x ™™ 8ý³õ  ­ €     =þ> ì Íþe‡ ’FþÌÿK aá>s6¡	³õ  ­ €     ˆýI ² 'ÿ›‹ ‚\þ * PU†K6ç
-³õ  ­ €     @þó §º ¾ÿù¤ “Óþ€ ›ÿ•©ÏÏ6J
-3ö €± €     ¼þƒ{§ 5 f ™Sÿ… ÿ©¥Ì96ì	3ö €± €     þ~ˆ s ,
- ·¿ÿF nÿ‘‹é*6î
-3ö €± €     ùüè ‰ v TÎÿÌÐÿ1  j”?A73ö €± €     Müm ¤² C 0šÿº†ÿ5 ¾ÿ@³i\7¿
-3ö €± €     ÷ûe ŠÝÿ’aÿª6ÿ Äþ¸Í6i3ö €± €     ªû> \?lÿæ6ÿ£ÿîÿþØˆ‰7‹3ö €± €     ½ûßÿa Û qÿìOÿšgÿêÿký~p}Ž8š3ö €± €     ‰üÀÿÿA êÿ”¨ÿŒ 0 ýx»8\³ö €µ €     ýÙÿ¾ ßÿ ïöÿsa r «ýÒH7f³ö €µ €     ïýI ÿ ÇÿÃK ™¥ ¿ ßþhÿñm6V³ö €µ €     þxlÓ ãÿÕ)Bž Yó¾î5’³ö €µ €     ÿŸ4Ëq Xqâ…Ø)jÈ§6X³ö €µ €     J ² Š%áœn´áðÝM6+³ö €µ €     M Æ• ’† ¾~ÿ‹¯yv5³ö €µ €     AÿzÊai uç¹o[în3~³ö €µ €     Jþ˜¥™ 9‡µí6(ÊšÓ„3ø+÷ `¹ €     ùý·ÏË´ zÚ˜-h{ 4‡
-‘4À+÷ `¹ €     þåÿÞò ßûUäêÿŸ¶Ÿø4Š+÷ `¹ €     JþÒÜ®ì|fl ¾ÿä5+÷ `¹ €     0þdï2É –!¶ Ôkp5+÷ `¹ €     ÙýA—¿ c 9¬°ÄZéâª¬4+÷ `¹ €     ˆýŠgÿl   'míÍ› [ a5Ä+÷ `¹ €     ÛüÚVÿ íÿBÿè[PÿÞŒÊg7W+÷ `¹ €     ÀûqDõÿl Ö«ÕliÿÈñú18 §÷ @½ €     Ýû4 hŒûM þ´hŠ7,§÷ @½ €     ñý`ƒ ÷ “: w"O¶u7I§÷ @½ €     ðÿ&ï… {'A\o
-/‚ì7§÷ @½ €     Þÿè¢Fùÿ¬'· ò-Ð¢6ï§÷ @½ €     Rþ=í *ÿþ ¹ÅŠÇþ0åŽ5Î§÷ @½ €     ãý»êJ µþCå]ô ãþúQõt5§÷ @½ €     Ýÿ) Lÿ¸»ú˜ Áp(6ñ§÷ @½ €     ~mg   {bR)jå âÒŽ7'ø  Á €     =)W íÿ‡&]gaç ž—nQ7i'ø  Á €     Ò …Ä  Æÿ];<‹sfi6j'ø  Á €     ¦ÿÝÕ ùÿ ‰p3v¼Hùç5'ø  Á €     ˜ÿePÿÿC ÉÖÌ¼->ŠMx4Ž'ø  Á €     ± _qT w (U;VCÙÏqX4Ï'ø  Á €     ì
-ÅÉ º T#õw$;ìŒ'4„'ø  Á €     ê„#œ Þ wÖü,ŸÜÓ~g4'ø  Á €     -5Ú, +¿©§^r»•5á£ø  Å €     Sik ÀX‹ÓÍƒé55½£ø  Å €     PŸû ñª¨wõž¡×Óx4Î£ø  Å €     ö(B°”š~-0×ô04·£ø  Å €     MGãü Ë½ŒZ	ÿ†­çBçî3.£ø  Å €     Bã³OY*Ë	–ÿ|1’ò¸3¦£ø  Å €     œ±j8xÝ¸S
-3œGP®ï–4¶£ø  Å €     Y(>=/ûðR®1ð$—ôì5t£ø  Å €     Ð^|=-EõULÌMp6ù  É €     ø¤„˜OSã!è“	T	·Ð6Eù  É €     "	ôyÎYmÑÎjå
-Ì€	Àk7óù  É €     	zé^—cë	m
-Ü9	¯M7lù  É €     !XfzÇh	– 
-ÍA	éj7èù  É €      ½¿p¥>K“	±-
-ÿ—	9›ù  É €     0	Ïù‚±úøiO	²	×H	Œø9_ù  É €     Ù	;ÆJkOù®		.ðEÕ‘8/ù  É €     ;	f8ÿ`®'	!	7‰i7ÕŸù àÌ €     !’Ö]k;7	ˆæ	ln•6KŸù àÌ €     ¹ç}H ~oÍÖÒË	5m™5ãŸù àÌ €     AÞ	hÅ#$"wÈ¸OCd4ÝŸù àÌ €     5	Çš®°ÛëQ¾ý^Pí2_Ÿù àÌ €     k
-”-"'»ž	¶Ñ	qñÏ1@Ÿù àÌ €     Ó³×àÌqe
-	¤Ù•`“0—Ÿù àÌ €     —W}Ææ Vê‹
-¸	ZCÉE0iŸù àÌ €     ?Ñ¹?îNçG
-a	›¤Ž×Y09ú ÀÐ €     ¬ µà£ñá)
-
-	M…OÃç/åú ÀÐ €     ÂÝáçê>R
-!	´ÃÛ/Aú ÀÐ €     (®LÌNúŒÝ™
-©	á¦5óu0lú ÀÐ €     ý­‹À‚6eUà
-;
-+†—=e0kú ÀÐ €     þ
-Œ¦qö‚-Ç
-F
-öJpÿ·/Ÿú ÀÐ €     ‰	#«r®Ô®†-
-ã	Ñ«£õ^/¸ú ÀÐ €     ~Ng#®òZÓ	î	€
-Hüñ.šú ÀÐ €     ¡ª˜²ŒOø
-—
-0“ôÅq.À—ú ÀÔ €     «	ëWA(Y6]6
-å
-däþ™Æ.¶—ú ÀÔ €     ®
-’™‚,Úî	n
-0˜™ê._—ú ÀÔ €     ZÓ=¼=³ì	à	¡­¶-S—ú ÀÔ €      iÂ·t>Ù­P
-£	ÇÌŽlÔ,h—ú ÀÔ €     ^8G91Ðˆ†
-s	£&1-—ú ÀÔ €     ‡ðÁ™†ŒdñX
-<	ÕjÙ‹O-«—ú ÀÔ €     Á
-ºnƒIóÞ		E„Õj/-‡—ú ÀÔ €     D	$$~€F«'	‚•ççs -û ÀØ €     )ÁŠ^š?*ª‚­W¸MD-°û ÀØ €     kó÷>k³Ü~ã[
-®:á §+Qû ÀØ €     4ëõÛm–i#Š	"”H Â*Dû ÀØ €     K^ÊJ’pn
-	­êÿÛ*gû ÀØ €     |˜*˜.“Ç>Ôù	 K*éû ÀØ €     ü?`&ÌUœŠì%‹Ñh ,)û ÀØ €     •í×º à«L2žo'c H(*û ÀØ €     ÍÃËX ñd^O¤‚m ,'Bû €Ü €     /	Ÿ‹L QÖ¥ðnÌâ X&›û €Ü €     êñh °L•eQ †T?u&û €Ü €     å’-Åÿ´%Aî.‡z4&Öû €Ü €     °!€½ÿ›Î.¶¼™º¨)š$û €Ü €     T2|†Þÿ˜Ù9°g(Mó#âû €Ü €     ¸›Ò/ÓÿšK>ÂqX“‘õ#µû €Ü €     ðœC–ÿ‹¼ÃO°_MŒÝ&#Òû €Ü €     Í½³ö ôþA–	&Â©ôµN"Xü €à €     µs– Á ,þóÐ
-,2Ú¨ o"Ùü €à €     à5ÿ.þ(Ç	j‹ÿ< ¡ç p";ü €à €     ï’xþþy
-|‰¤š ãO¯!<ü €à €     B-sh™ÿ¡A#
-òÉ¥ú R•á Bü €à €     ÑÖã6Îÿølé	U˜“Å ü €à €     ¹ ×E ØF–	‘0ˆ,ÿü €à €     =æ  ¤‚ñPYðÐ è59Áü €à €     ïÄ 8äÿ«ÿ a ƒ7ÙÿÐ ´‹ü `ä €     ¢ŠÿÙÿSÿ¤ÿh•ÿ¼µh øÿÿíÿkf<‹ü `ä €     ËÓþÒÿ„ÿÅÿÏ9ÿÍ* !ÿÙþuÿdjô‹ü `ä €     `)þ „ÿWÿ–åþžo( ÷ÿ—þÿ}P‹ü `ä €     Š ½ý. (ÿ°þî”þ8 kCþÇþ‡ ÝÏ‹ü `ä €     %Öý ÿEþSlþ 6 Óþþ9 >	‹ü `ä €     Úýp ÿþÂýÛTþ++úÿº ©ý;þéÿ¹"‹ü `ä €     ð™ý Íþ=ý­DþÚÇÿÑÿFýçý·ÿõ‹ü `ä €     t«ý Àþ"ý¸WþîÒðÿW KýÞýÚÿBý @è €     ü þoÒþCýŸ”þ@ÈP ¦ý=þ •«ý @è €     óÿLþ[Ôþ”ýˆöþtû• ± þîþ Ó‘ý @è €     úþÛþ4ÿmþÚrÿ{p«  Óþ½ÿ• Cýý @è €     tÿîÿ$ §ÿsýÿ|Ä  æÿt [!aý @è €     Î × œž ¯ ã| €šþ H Ò  åõ«ý @è €     £0Í ß €!á ½ôUL Fk'ýý @è €     (Kÿ8ZrEIœÄˆÇyÃcý @è €     ÁZÿƒÙ¥w÷…ÑòäDƒý  ì €     1m¿ÿzqÊ½£ô$ÂCˆ`ƒý  ì €     üÿd‹ jŠþuY2ú ¦d>Er¥ƒý  ì €     ¶þÔ ô ˜<lª èjT   \ž —…7ƒý  ì €     b 
- 9 ÏÛý ¦üÿæÿ#_ Ü".ƒý  ì €     ÞõÿAÿÞû9 ‡0  ½ $‡ƒý  ì €     =z Wÿ·F‹, C bß+À„ßƒý  ì €     ŸÄ / m2Ýÿ·–±ÿÿ¹.Ø‚Nƒý  ì €       Ò ¼ cÓŒeÿwesÿ?ýÝ(Zþ @ðW@    Ñÿ.¿ Ã°O‘ÿåËÿÜüJÉæþ @ðW@    Û ªÈ EHF o÷y †þ“ÓÍ‘ ·þ @ðW@    tÌ…pÞª è  †œŸ“ €þ @ðW@     »! © ?Š {ÄG }*AÒþ @ðW@    ‰ÿÚˆ # 9 ˜ S¶X Ô9U'ðþ @ðW@    ›ÿ W # cßŠˆÿWÎß0 þ @ðW@    … 
-w Ÿ m ã8¾ãVºþ‹4uî ¬þ @ðW@    1[¤ ñ µ Á g® Cþ1ïŒÙ eþ  ôW     ñ C ’ÿ&Š ¯íÿANÌÿþt=çÏ 1þ  ôW     ûÿ¸ÿóþî X O_ÿm2ÿáýÛÉ (— ãþ  ôW     tÿM 0 Ì Å v‹ÿ[Ùqÿ+þßø  ¹þ  ôW     ¸ÿ!‚'S¿( òE xþ&güJþ  ôW     vÿý kCzs ² ¦ýøt¥¡+þ  ôW     ,þT ¬ÿ)G Di šüo$hþ  ôW     8ý©ÿ/ÿÇ Y&@ Ð… :ý	Ü Ô étþ  ôW     Ÿýhÿhÿ¢ ù®‰ ñÀ 'ÿ» ½ î nuûþ  øW     Wþyÿ¡ÿ‰ XÆ‘ E" ëÿ[ ¥ ñ ¿·ûþ  øW     ÐýfÿkÿH RLõÿq—ÿCþûÿp ¡ õ~ûþ  øW     êüëþÓþ àCÿ…~ÿØû·ÿ5 # •pûþ  øW     ¨ýxþ{þ ûUÿŸS
-ÿ û¦ÿH  Rûþ  øW     =ÿ`þpþÆÿ{  ‰Î„ÿ û°ÿ­ ] ïûþ  øW     Tÿ'þ8þ-ÿÇwA ï'±ÿÞûÿî P Ânûþ  øW     þ°ý-þÜþHãÑÿÕ:ÿ«ûÿÒ ›ÿþJûþ  øW     .ý·ý³þ ÿ=‡ÿÃ]¹þNüÈþº %ÿRwÿ ÀûW     ý2þäþ£ÿ—ÝÙÿõ šþ2ýßþË FÿÖ°wÿ ÀûW     ýJþ6þþÿŒè- (ø‡þqýÿ§ JÿÔˆwÿ ÀûW     åüþþÑÿ&  PXþæý(ÿY ÿD›wÿ ÀûW     ¯ü=þÿ ÿ€¬ÿ”vEþŒþsÿJ æþ:wÿ ÀûW     ¾ü³þ²ÿnþ‡€ÿº)þ²ýâÿn ëþj`wÿ ÀûW     ýÿ˜þáþ>‰‹ÿ·KÓýœûJ  ÿoSwÿ ÀûW     ½ý,ÿ˜ýÜÿ­³Öÿ×L²ýþú¼ – lÿwÿ ÀûW     þ8ÿ/þb ÿÕ/ à×íý?ü%´ ¸ÿmã÷ÿ  ÿW     Áþ@ÿlÿ( ®€? l7øýÐü3¢ ”ÿ£r÷ÿ  ÿW     rþµÿj Ïÿ=Y l×ýü’ yÿ”,÷ÿ  ÿW     Sþ, ¾ »ÿò ÒÀ Mºèýˆû® Œ xÿgT÷ÿ  ÿW     xþÿ³ÿÿ7 DÆ CkÏýfûÖÿòÿÂþºÀ÷ÿ  ÿW     CþIþXþýþOÿw . ¶sVý;û¸þãþ¨ý»¯÷ÿ  ÿW     üýWþoþ‰þ-ÿC íÿ…%ýÅû@þlþYý<÷ÿ  ÿW     ~þsÿÞþ?þžÿ _ Ñ‹{ýûüqþÅþ§ý›÷ÿ  ÿW     wÿ2 eþ5þÑÿ„ Æ ÐýTý‘þ@ÿ¾ý^6s   X     Ûÿl †þ`þ§ÿ • ,Êýgüdþuÿ¨ýÁs   X     MÿR _ÿþEÿÁÿ 5‚ý™ûþ^ÿ‰ý{s   X     @þìÿªþqýûþ¿ÿ  mýåûþIÿyý9s   X     ›ýèÿýªý=ÿ= § ´8þ³ü©þ½ÿðý·ês   X     íý; ÕüMþ‘ÿµ O•úþåüAÿZ Ÿþ^vs   X     ÀþÔÿµýÎýNÿ• +„TßþüþþG ²þÇ›s   X     ¡ÿÿÒþôüFÿ… Ö [VˆþÂü˜þùÿ§þÌls   X     ¯ oÿF >ý% 63ëŽëþzýÿ[ VÿZ¢ï  €X     Bc ã #þç Ö´v}€ÿÎý  Neï  €X     Ê ± ûÿ£þ· ‰‚üvÿþ‘ ƒ+ ¼Sï  €X     c Y Òþ°þ5 Ø û \%ÿ®þ¼ §øÿ³Mï  €X     ›  ‹þxþôÿ Ñ áÿÖþü Ëøÿ\/ï  €X     ƒ 9 ÿJþçÿŒ ñ >ÎQÿãýYùùÿï¸ï  €X     + ‘ †ÿ…þ ; ÷  }ÿý2Ìÿ…ùï  €X     L n Ýþßþ <ÿ³ É!gÿŸüJ,=ÿŸ«ï  €X     v ´ÿ—ý¸þÆÿÕý- ›²èþzû˜ ¢>þk `X     ( 1ÿÌü8þ™ÿÒü–ÿE2þúù ð ký¥Žk `X     ™ÿ7ÿ_üþïÿ¯ü$ÿñýäùÿÿ‹ 5ý8k `X     'ÿKÿÎûuþX 4ýñþÿQý‚û@ ‚ Oý„½k `X     pÿrÿüÿ˜ ïýÿÞ1`ý–ý½ ¼ šýí€k `X     ©  
-þmÿþLÿsÇý»þL
-=þk `X     ñÆ æÿ†ÿs	ÿÂÿoôQþ÷ý´Sãþk `X     4ù HÿŒÿ_ÿ$ v þÑûÉ¶ÿÕk `X     Ù +þGÿË «þ# Ífþ1úb	ÿ'\ë @X     Ü Ì 0ÿ¯þC BþÊÿäÆÎýúÇ ÚþÙë @X     ö ­ T uþ þ‚ÿ™|ýbú¦ É¢þœë @X     EŠ Ùÿâþ9 Rþ|ÿ‰ºýlú´Žþõšë @X     o ˆ 1ÿ	ÿ> wþUÿ}Zóý.úT‚þ¿Eë @X     žþ? ½þMþòÿ=þÊþ§Ó˜ýúé õ $þ}¬ë @X     øýÁÿþœýÎÿþbþÈDýIúŠ { Òý1ë @X     !ÿÅÿþ¤ý7 zþ¢þÀ:
-ý™úË ¨ )þ`’ë @X     * = =þ¿ý” ¹þ5ÿ/VKýwú1£þÖWg @X     " { nýýD Rþ‹ÿHûSýú4Roþwêg @X        Qü´ýëÿéýØÿUÉyýÒú=¯þ9­g @X     I ï üzþ/ 1þ éVþLýÞj‰þÍ¥g @X     Õ G¾üÿ ±þ!™mfÿùþºö6ÿÐ“g @X     µLþÿ© ÊþDßÊÒÿþ;ÿ|ÿçÒg @X     ¢[ ÿÔþ× •þ>Þå¼ÿAüeé‡ÿ4­g @X     ­þ¯þö CþVÈ„ÿpûcÞtÿ‰g @X     ­¦êü©þÈ éýIÀ4#ÿdûJÀ@ÿoSã @X     è °úýÒþ ±ýá â-ŒþwûA|ÿšXã @X     `–ÿàþ Xý  °©ýkûÖ³þø}ã @X     tn ;ÿ†þÿ ü*ÿš‰¢ü€ûeÞ Éýùªã @X     nÖÿGþjþþIüÁþû³Nüiü	{ Zý– 
-ã @X     ´Š ÿNÿCÿýJÿÐ0*ý®ý°@þ\ã @X     ‡³k ¬ - þ 1Rþ±ý§SüþÍ/ã @X     ¢x W þ Xe›þ2üÏ“ÿüRã @X     §ð«ÿñ -ÿ>ý«ÿÇîþ§ú7¤þ‡
-c  X     ù»•ÿ oþ‚üQÿ8|VýLú›Utþr
-c  X     uš; ÿñý\üÿ$4÷üûúY cþQ
-c  X     Ï¢« ŸÿÂý¹üÐþ€0êüû~}þz0	c  X     ÛY Ïÿóý:ýµþÀoþü/ûaµþ‘
-	c  X     Ä’ÿÖÿBþ•ý©þ}’ýwú’¥ÁþG
-î	c  X     9\#ÿæÿvþÈýqþþêü·úÌ¹Èþ“
-8	c  X     ::ÿåÿmþ«ýÌý“m†üoûxcàþù	?	c  X     oyNÿpÿôýýÈü'Ø­ûÇú¸• •þ9	›	ß  X     VeÿÜþ‚ýü(üü!ñúKù,
- þ>	²ß  X     Ë‘çÿÛþÓýÔü¤üeû’ùM‚ ^þ9	Œß  X     ŠD üþvþjý»ý«IÁûšûŒgÿ;	í	ß  X     |‡Çÿoþ„þkýrþ”ü¬ü®ÿÏ	Ê	ß  X     ä r 2ÿøýnþ)ýöþ… 9üÛûs—™þ2
-§ß  X     u[ ÿšþäþ^ýÜÿë– Æüàúsï¶þ3
-ƒ	ß  X     Ã eþbÿ.ÿkýˆ Y× 3ýáúŸZïþg
-W
-ß  X     € qý>ÿ»þüD ' øü†û6:–þG
-	[ à"X     u áýßþOþ‚û½ÿG‘ ºühü¿ ø.þ 	µ[ à"X     þ· Mÿ"ÿoþûÆÿ.
-ý>ýØ øþ	.	[ à"X     ´à ¬ÿÖÿ¢þõú Âi{ýoýâõý°	»[ à"X     ñ ÿp ‡þú÷ÿº’ýÐü‡ý×p[ à"X     *,ºþŒ 3þòùŽÿLÖ jý<üÉ *ÿüfb[ à"X     áeÕþ! ÈýEùÿÇ× 5ý‚üw ª hü’?[ à"X     KI­þŸÿhý¨ø¼þG± âüïü$  ÜûÚ`[ à"X     `¯ rþ\ÿý ø{þÓ4 Füü½ÿjÿbûß/× À&X     ³Ÿÿ'þ#ÿ‚üv÷þTRÿOû'ú(ÿ˜þ£ú|˜× À&X     9Žþyý¹þÂû«öjý× cþIúÊøxþ†ý®ù8!× À&X     n þãü>þDû:ö¨ü &þÆù/ùøýü0ù_× À&X      þýÛý%û}ö>üÁ °þäùnúÍý&üaù k× À&X     H`þ²ý{ýû.÷üå *ÿõùÍú®ýüÊùTB× À&X     Ž{þ5þ(ýâú¶÷Ýû| ÿyùúRý¤ûúnm× À&X     rVþIþý¢úÜ÷†û©ÿŸþåøùøüãúDúÖ-× À&X     ï[þ[þ@ýtúú÷zûNÿvþæøŽøý’údút¤S  *X     öÿøþ¾ý“úøÈûÂÿÆþSù ø¸ýûÅúS  *X     ¯‚ÿLÿ5þ¨úùÅûòÿ¸þ7ùØø	þ‚ûûÃÿS  *X     Õ ›þwþêýú-ù×úÿ†ýøXøgýóú—úiþ S  *X     o ý‰ýéüFùíøŠù×ý8üšö(÷wüúÉùÒýÃS  *X     ¸ `ü™ý üBùúøàø}ýüödö9ü	úÃùOýS  *X     Ð üãýùûÞù>ùêø®ýrü	ö|ö|üšú/ú¶ü{S  *X     9 üýëûMú9ùàø„ýõû»õ²öküžúõù,üGS  *X     HÿûúÛü’ûmúùVøÞüÔúîô¹öêûçùAùû¸Ï+ à.X     Šþ?úünû²úLùÏ÷Yü4úbôÈö­ûTùùÿù1Ï+ à.X     @þ•úMüücûMúû÷bü€ú²ôyö'üŠù¦ùXú.Ï+ à.X     þ‰û­ûý9üDû›ø¢üûvõ¹õÔü1úDúÒú–Ï+ à.X     ˆý-üûý“üPûÚøtüûÄõHõ×üsúZú¢ù^Ï+ à.X     .ý7ü®úWüüÒúØøôû»ú©õ’õgüAú	úøŒÏ+ à.X     êý5üàú%üýÞú[ùßûÂúðõUöwüEúú§÷xÏ+ à.X     dÿŽü¶ûüùýaûú=ü!ûyö¹öòüútú¬÷Ï+ à.X      ÜüäûÄüIþhûú_ü(û„ööíüžú‡úU÷O €2X     Yÿáüìú»üùýû¬ùüØúAöõeüúú÷­O €2X     dþ%ý½úáü6þZûäùüû‰ö/õ^üòú:ú¹öÍ O €2X     ×þÐý	üNý`ÿ üÝúˆüäûs÷iö@ýÍû[ûöUO €2X      dþBýÑý  Ýý×û'ý¾üRøQ÷Qþ‡ürüP÷ÐO €2X     ÓþíýUþ’hþTü‰ýýÇø5÷õþÓüÚü%ø$O €2X     M3ÿlþšþFVþFü¢ýàüÒø]÷1ÿ°ü×ü ø%O €2X     9"ÿUþ^þeãýßû{ýMü~øÀø+ÿ-üœü•÷O €2X     & ÃþÔýþÿ{ý›ûEý÷û+øÌùÿÂûnü±÷YÏ €6X      ®þÁýJþ¡mýËûDýkü0øŒøÿÅû˜üT÷Ï €6X     v ÜþèýkþY™ýFü}ýeý{øxöàþáûÖü”öRÏ €6X       ÿÔý1þì Çý·üÚý\þâø¬ö‡þáû×üæö>Ï €6X     šÿÿùýÒýW ÊýðüNþGÿdùÃøaþüÜüi÷Ï €6X      Æ ˜þyý®ÿ›ý4ý·þt úú¸þ¯ü2ý³öŒÏ €6X     ;99ÿEýÿoý¿ýìþÅ½ú·ùsÿý ýö_Ï €6X     Ø-»ÿvýÀþŽý9þÿÀ7ûÿø  (þÞýöºÏ €6X     £„1 þÏþìý:þNÿExû¹ø} Hþþ°õG @:X     ÖkH ¯þòþ>þÿý`ÿu•ûüø¶ 6þ1þôô<G @:X     ûc< iÿ#ÿ„þ"þVÿ„¿ûoùBnþŽþÎô\G @:X     a «ÿèþÁþÊÿÝCü°ùD)ÿGÿ?ôƒG @:X     ýYËv € Yÿ¡ÿÉ Ç6ýêùkH , úò•G @:X     ¿d ¥ R§ÿ© ¶Ð@þìúFuÉ \òÿG @:X     ÊáÛÕ æ£ÿyKAïþ³üi)è êñG @:X     Á÷#è Nÿ»Õ:YÿœýóIÅ yðÜ G @:X     Ò“Ü ÇâþÒmZÝÿ‹ü—X¡ Lï‚ Ç  >X     Äaú z­þJðß… %ûÁÅµ @ïkÿÇ  >X     µ2ÆrÀÈþ%m»!û]z.2ïÝÿÇ  >X     ÊèRõ7ÒþÝÍf|Jýõ”ÿî‹Ç  >X     UE	 kþí¤\v<þBÚTï¼ Ç  >X     ,vÏ·Âý[øý35þ[Á Éî¼þÇ  >X     ÄGØ¢8ý²eÂü ÞýÁâR DîÿÇ  >X     äˆÇFèõü]Y‰ó jýÄ¢ìÿÝîÏÿÇ  >X     
