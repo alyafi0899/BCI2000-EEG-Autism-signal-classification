@@ -1,0 +1,15 @@
+from BCI2kReader import BCI2kReader as b2k
+import numpy as np
+from PIL import Image as im
+import cv2
+import matplotlib.pyplot as plt
+
+
+#baca data sinyal eeg
+filename = "Bader_Autism_24_11_2011S001R07.dat"
+with b2k.BCI2kReader(filename) as test:
+        my_states = test.read(-1)
+        my_signals, stateslice = test[100:5000]
+
+
+plt.imshow(my_signals.T[:, -512:], cmap="viridis")
